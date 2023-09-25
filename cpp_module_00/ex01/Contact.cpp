@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 14:09:27 by jhusso            #+#    #+#             */
-/*   Updated: 2023/09/19 16:42:08 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/09/20 10:18:46 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ Contact::Contact(std::string fname, std::string lname, std::string nname, std::s
 }
 
 Contact::Contact() {
-
+	// std::cout << "Constructor called" << std::endl;
 }
 
 Contact::~Contact() {
-
+	// std::cout << "Destructor called" << std::endl;
 }
 
 std::string	Contact::getFirstName() {
@@ -37,7 +37,7 @@ std::string	Contact::getFirstName() {
 void	Contact::setFirstName() {
 	do
 	{
-		std::cout << "Enter first name: " << std::flush;
+		std::cout << "\033[1;34mEnter first name: \033[0m" << std::flush;
 		std::getline(std::cin, FirstName);
 		if (std::cin.eof())
 			exit(1);
@@ -54,7 +54,7 @@ std::string	Contact::getLastName() {
 void	Contact::setLastName() {
 	do
 	{
-		std::cout << "Enter last name: " << std::flush;
+		std::cout << "\033[1;34mEnter last name: \033[0m" << std::flush;
 		std::getline(std::cin, LastName);
 		if (std::cin.eof())
 			exit(1);
@@ -71,7 +71,7 @@ std::string	Contact::getNickName() {
 void	Contact::setNickName() {
 	do
 	{
-		std::cout << "Enter nickname: " << std::flush;
+		std::cout << "\033[1;34mEnter nickname: \033[0m" << std::flush;
 		std::getline(std::cin, NickName);
 		if (std::cin.eof())
 			exit(1);
@@ -87,7 +87,7 @@ std::string	Contact::getNumber() {
 void	Contact::setNumber() {
 	do
 	{
-		std::cout << "Enter number: " << std::flush;
+		std::cout << "\033[1;34mEnter number: \033[0m" << std::flush;
 		std::getline(std::cin, Number);
 		if (std::cin.eof())
 			exit(1);
@@ -104,7 +104,7 @@ std::string	Contact::getSecret() {
 void	Contact::setSecret() {
 	do
 	{
-		std::cout << "Enter secret: "<< std::flush;
+		std::cout << "\033[1;34mEnter secret: \033[0m"<< std::flush;
 		std::getline(std::cin, Secret);
 		if (std::cin.eof())
 			exit(1);

@@ -6,12 +6,18 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:48:11 by jhusso            #+#    #+#             */
-/*   Updated: 2023/09/20 09:23:43 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/09/20 10:20:09 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
+
+void	display_cover() {
+	std::cout << "\033[1;35m***********************************************\033[0m" << std::endl;
+	std::cout << "\033[1;35m*       WELCOME TO MY AWESOME PHONEBOOK       *\033[0m" << std::endl;
+	std::cout << "\033[1;35m***********************************************\033[0m" << std::endl;
+}
 
 int main(void)
 {
@@ -19,8 +25,8 @@ int main(void)
 	PhoneBook pb;
 	std::string choice;
 
-	std::cout << "WELCOME TO THE PHONEBOOK" << std::endl;
-	std::cout << "Do you want to ADD, SEARCH or EXIT? " << std::flush;
+	display_cover();
+	std::cout << "\033[1;32mDo you want to ADD, SEARCH or EXIT? \033[0m" << std::flush;
 	std::cin >> choice;
 	std::cin.clear();
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -43,7 +49,7 @@ int main(void)
 		{
 			pb.display_contacts();
 		}
-		std::cout << "Do you want to ADD, SEARCH or EXIT? " << std::flush;
+		std::cout << "\033[1;32mDo you want to ADD, SEARCH or EXIT? \033[0m" << std::flush;
 		std::cin >> choice;
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

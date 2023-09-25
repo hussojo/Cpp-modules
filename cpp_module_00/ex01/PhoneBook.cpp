@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 12:14:46 by jhusso            #+#    #+#             */
-/*   Updated: 2023/09/20 08:14:03 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/09/20 10:36:59 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 PhoneBook::PhoneBook() {
 	// std::cout << "Constructor called" << std::endl;
-	// PhoneBook::index = 0;
 }
 
 PhoneBook::~PhoneBook() {
@@ -26,23 +25,29 @@ PhoneBook::~PhoneBook() {
 
 void	PhoneBook::display_one_contact() {
 	int aux;
+	std::string input;
 	std::string firstname, lastname, nickname;
 
 	std::cout << "Give an index to display: " << std::flush;
-	std::cin >> aux;
+	std::getline(std::cin, input);
 	while (1)
 	{
+		if (input.empty() || input.length() > 1)
+		{
+			std::cout << "Please enter a digit between 1 and 8! " << std::flush;
+			std::getline(std::cin, input);
+		}
+		aux = std::stoi(input);
 		if (aux >= 1 && aux <9)
 		{
-			std::cout << std::setw(10) << std::left << aux << std::left << std::endl;
-			std::cout << std::setw(10) << std::left << "FIRSTNAME: " << contacts[aux - 1].getFirstName() << std::endl;
-			std::cout << std::setw(10) << std::left << "LASTNAME: " << contacts[aux - 1].getLastName() << std::endl;
-			std::cout << std::setw(10) << std::left << "NICKNAME: " << contacts[aux - 1].getNickName() << std::endl;
-			std::cout << std::setw(10) << std::left << "NUMBER: " << contacts[aux - 1].getNumber() << std::endl;
-			std::cout << std::setw(10) << std::left << "SECRET: " << contacts[aux - 1].getSecret() << std::endl;
+			std::cout << std::setw(10) << std::right << "\033[1;34mFIRSTNAME: \033[0m" << contacts[aux - 1].getFirstName() << std::endl;
+			std::cout << std::setw(10) << std::right << "\033[1;34mLASTNAME: \033[0m" << contacts[aux - 1].getLastName() << std::endl;
+			std::cout << std::setw(10) << std::right << "\033[1;34mNICKNAME: \033[0m" << contacts[aux - 1].getNickName() << std::endl;
+			std::cout << std::setw(10) << std::right << "\033[1;34mNUMBER: \033[0m" << contacts[aux - 1].getNumber() << std::endl;
+			std::cout << std::setw(10) << std::right << "\033[1;34mSECRET: \033[0m" << contacts[aux - 1].getSecret() << std::endl;
 			break ;
 		}
-		else
+		if (aux < 1 || aux >= 9)
 		{
 			std::cout << "Phone book has only 8 entrys, please select number between 1 and 8: " << std::endl;
 			std::cin >> aux;
@@ -55,6 +60,7 @@ void	PhoneBook::display_contacts() {
 	std::string firstname, lastname, nickname;
 	Contact contact = contacts[aux];
 
+	std::cout << "\033[1;33m---------------------------------------------------" << std::endl;
 	for (aux = 0; aux < 8; aux++)
 	{
 		firstname = contacts[aux].getFirstName();
@@ -75,11 +81,12 @@ void	PhoneBook::display_contacts() {
 			nickname.resize(10);
 			nickname.replace(9, 1,  ".");
 		}
-		std::cout << std::setw(10) << std::left << aux+1 << std::left << " | " << std::flush;
-		std::cout << std::setw(10) << std::left << firstname << " | " << std::flush;
-		std::cout << std::setw(10) << std::left << lastname << " | " << std::flush;
-		std::cout << std::setw(10) << std::left << nickname << std::endl;
+		std::cout << std::setw(10) << std::right << aux+1 << std::left << " | " << std::flush;
+		std::cout << std::setw(10) << std::right << firstname << " | " << std::flush;
+		std::cout << std::setw(10) << std::right << lastname << " | " << std::flush;
+		std::cout << std::setw(10) << std::right << nickname <<  " | "  << std::endl;
 	}
+	std::cout << "---------------------------------------------------\033[0m" << std::endl;
 	this->display_one_contact();
 }
 

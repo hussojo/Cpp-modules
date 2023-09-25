@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/16 11:47:05 by jhusso            #+#    #+#              #
-#    Updated: 2023/09/20 10:41:09 by jhusso           ###   ########.fr        #
+#    Created: 2023/09/20 11:15:11 by jhusso            #+#    #+#              #
+#    Updated: 2023/09/20 11:16:30 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := megaphone
+NAME := brainz
 CC := c++
-FLAGS := -std=c++98 -Wall -Wextra -Werror
-SRC := megaphone.cpp
+FLAGS := -std=c++98 -Wall -Wextra -Werror -g
+SRC := main.cpp PhoneBook.cpp Contact.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re
@@ -32,4 +32,4 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
