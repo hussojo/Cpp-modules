@@ -6,14 +6,14 @@
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 11:15:11 by jhusso            #+#    #+#              #
-#    Updated: 2023/09/20 11:16:30 by jhusso           ###   ########.fr        #
+#    Updated: 2023/10/01 09:45:34 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := brainz
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror -g
-SRC := main.cpp PhoneBook.cpp Contact.cpp
+SRC := main.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re
