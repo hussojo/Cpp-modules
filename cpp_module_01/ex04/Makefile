@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/20 11:15:11 by jhusso            #+#    #+#              #
-#    Updated: 2023/10/01 11:13:28 by jhusso           ###   ########.fr        #
+#    Created: 2023/10/08 16:01:20 by jhusso            #+#    #+#              #
+#    Updated: 2023/10/08 16:01:34 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := brainz
+NAME := filestream
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror -g
-SRC := main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
+SRC := main.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re

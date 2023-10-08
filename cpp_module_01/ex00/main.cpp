@@ -6,23 +6,20 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 09:38:18 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/01 09:44:04 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/01 11:13:52 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
-
-Zombie::Zombie(){
-	std::cout << "Constructor called!" << std::endl;
-} ;
-
-Zombie::~Zombie(){
-	std::cout << "Destructor called!" << std::endl;
-}
+#include "Zombie.hpp"
 
 int main(void)
 {
-	Zombie zombie;
-	
+	Zombie zombie("Stan of Stack");
+	zombie.announce();
 
+	Zombie *newOne = newZombie("Holly of Heap"); // creates a zombie object newOne, and assigns "Holly of Heap to it"
+	newOne->announce(); // calls the announce method on the object that newOne points to
+	delete newOne;
+
+	randomChump("Ray Random");
 }
