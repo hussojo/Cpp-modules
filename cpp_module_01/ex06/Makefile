@@ -6,11 +6,11 @@
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 07:33:16 by jhusso            #+#    #+#              #
-#    Updated: 2023/10/10 17:42:57 by jhusso           ###   ########.fr        #
+#    Updated: 2023/10/10 17:53:45 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := Harl
+NAME := harlFilter
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror -g
 SRC := main.cpp Harl.cpp
