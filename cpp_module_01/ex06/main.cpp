@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:34:18 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/10 18:04:01 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/19 15:41:52 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 	Harl harl;
 	std::string level;
 
-	std::cout << "Which level you want Harl to complain?"
+	std::cout << "Which level you want Harl to complain?" << std::endl;
 	std::cout << "Choose a number:" << std::endl;
 	std::cout << "1 debug" << std::endl;
 	std::cout << "2 info" << std::endl;

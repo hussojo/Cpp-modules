@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:38:47 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/10 18:56:11 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/19 16:06:36 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Zombie::Zombie()
 
 void Zombie::setName(std::string name)
 {
-	std::cout << name << " is called!" << std::endl;
 	this->name = name;
 }
 
