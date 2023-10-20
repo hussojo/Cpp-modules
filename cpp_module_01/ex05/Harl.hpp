@@ -6,11 +6,13 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:34:27 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/19 15:40:36 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/20 07:55:05 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
+#ifndef HARL_HPP
+#define HARL_HPP
+
 #include "string"
 
 class	Harl {
@@ -27,3 +29,5 @@ public:
 	void	complain(std::string level);
 
 } ;
+
+#endif
