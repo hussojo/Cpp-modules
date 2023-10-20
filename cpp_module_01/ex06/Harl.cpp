@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:40:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/10 18:04:18 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/20 09:42:15 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Harl::Harl ()
 {
-	std::cout << "Constructor called!" << std::endl;
+	// std::cout << "Constructor called!" << std::endl;
 	this->funcArr[0] = &Harl::debug;
 	this->funcArr[1] = &Harl::info;
 	this->funcArr[2] = &Harl::warning;
@@ -23,7 +23,7 @@ Harl::Harl ()
 
 Harl::~Harl ()
 {
-	std::cout << "Destructor called!" << std::endl;
+	// std::cout << "Destructor called!" << std::endl;
 }
 
 void	Harl::debug(void)
