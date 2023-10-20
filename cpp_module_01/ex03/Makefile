@@ -6,7 +6,7 @@
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 11:15:11 by jhusso            #+#    #+#              #
-#    Updated: 2023/10/01 14:57:04 by jhusso           ###   ########.fr        #
+#    Updated: 2023/10/20 07:48:57 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ OBJ := $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -o $(NAME) $(COMPILE_FLAGS) $(OBJ)
+	$(CC) -o $(NAME) $(FLAGS) $(OBJ)
 
 $(OBJ): $(SRC)
-	$(CC) -c $(COMPILE_FLAGS) $(SRC)
+	$(CC) -c $(FLAGS) $(SRC)
 
 clean:
 	rm -f $(OBJ)
