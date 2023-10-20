@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:16:00 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/08 15:18:46 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/19 14:49:41 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Weapon::Weapon(std::string type)
 {
-	std::cout << "Weapon constructor called" << std::endl;
+	std::cout << "Weapon constructor called with " << type << std::endl;
 	this->type = type;
 }
 

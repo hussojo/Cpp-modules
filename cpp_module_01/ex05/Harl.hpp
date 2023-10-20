@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:34:27 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/10 17:42:40 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/19 15:40:36 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 class	Harl {
 private:
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
-	typedef void(Harl::*funcPointer)(void);
-	funcPointer funcArr[4];
+	void			debug(void);
+	void			info(void);
+	void			warning(void);
+	void			error(void);
+	typedef void	(Harl::*funcPointer)(void);
+	funcPointer		funcArr[4];
 public:
 	Harl();
 	~Harl();

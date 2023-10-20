@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:57:26 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/08 15:46:38 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/19 15:06:08 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 HumanB::HumanB(std::string name) : name(name), weapon(NULL)
 {
-	std::cout << "HumanB constructor called!" << std::endl;
+	std::cout << "HumanB constructor called with " << name << std::endl;
 }
 HumanB::~HumanB()
 {

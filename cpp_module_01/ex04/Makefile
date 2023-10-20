@@ -6,11 +6,11 @@
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/08 16:01:20 by jhusso            #+#    #+#              #
-#    Updated: 2023/10/08 16:01:34 by jhusso           ###   ########.fr        #
+#    Updated: 2023/10/19 15:28:28 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := filestream
+NAME := sed
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror -g
 SRC := main.cpp

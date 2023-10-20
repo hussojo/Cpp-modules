@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:14:02 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/01 15:17:46 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/19 14:49:37 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
 public:
 	Weapon(std::string type);
 	~Weapon();
-	const std::string &getType() const;
+	const std::string& getType() const;
 	void setType(std::string newType);
 } ;
 

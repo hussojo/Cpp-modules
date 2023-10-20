@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:48:11 by jhusso            #+#    #+#             */
-/*   Updated: 2023/09/20 10:20:09 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/20 07:32:31 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ int main(void)
 	std::string choice;
 
 	display_cover();
-	std::cout << "\033[1;32mDo you want to ADD, SEARCH or EXIT? \033[0m" << std::flush;
-	std::cin >> choice;
-	std::cin.clear();
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	while (1)
 	{
-		if (std::cin.eof())
-			exit(1);
+		std::cout << "\033[1;32mDo you want to ADD, SEARCH or EXIT? \033[0m" << std::flush;
+		std::getline(std::cin, choice);
+		if (choice.empty())
+		{
+			std::cout << "Invalild input" << std::endl;
+			continue ;
+		}
 		else if (choice == "EXIT" || choice == "exit")
 			break ;
 		else if (choice == "ADD" || choice == "add")
@@ -49,10 +50,6 @@ int main(void)
 		{
 			pb.display_contacts();
 		}
-		std::cout << "\033[1;32mDo you want to ADD, SEARCH or EXIT? \033[0m" << std::flush;
-		std::cin >> choice;
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 	return (0);
 }
