@@ -1,35 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 07:34:27 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/20 09:44:17 by jhusso           ###   ########.fr       */
+/*   Created: 2023/10/20 09:44:40 by jhusso            #+#    #+#             */
+/*   Updated: 2023/10/20 09:45:25 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
-
-#include "iostream"
-#include "string"
-
-class	Harl {
-private:
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
-	typedef void(Harl::*funcPointer)(void);
-	funcPointer funcArr[4];
-public:
-	Harl();
-	~Harl();
-	void	complain(std::string level);
-
-} ;
+#ifndef MAIN_HPP
+#define MAIN_HPP
 
 void	give_instructions();
 

@@ -6,16 +6,23 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:34:18 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/20 09:41:49 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/20 09:48:22 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
+void	give_instructions()
+{
+	std::cout << "Filter Harls level of complaining by writing one of these levels "
+				<< "after executable: DEBUG, INFO, WARNING, ERROR." << std::endl;
+}
+
 int main(int ac, char *av[])
 {
 	Harl harl;
 	int level;
+
 	if (ac == 2)
 	{
 		if (strcmp(av[1], "DEBUG") == 0)
@@ -43,7 +50,7 @@ int main(int ac, char *av[])
 		}
 	}
 	else
-		std::cout << "Wrong amount of arguments" << std::endl;
+		give_instructions();
 
 	return 0;
 }
