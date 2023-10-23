@@ -5,23 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 14:29:46 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/23 12:32:11 by jhusso           ###   ########.fr       */
+/*   Created: 2023/10/21 12:10:15 by jhusso            #+#    #+#             */
+/*   Updated: 2023/10/21 14:23:59 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main(void)
+int	main(void)
 {
-	Fixed a; // default constructor -> the value of Fixed class called a is set to 0
-	Fixed b(a); // copy constructor
-	Fixed c; // default constructor
+	Fixed a;
+	Fixed const b( 10 ); Fixed const c( 42.42f ); Fixed const d( b );
+	a = Fixed( 1234.4321f );
 
-	c = b; // testing the cpy assigment operator
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return 0;
 }

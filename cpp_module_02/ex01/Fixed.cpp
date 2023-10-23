@@ -5,26 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 14:33:37 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/23 12:42:59 by jhusso           ###   ########.fr       */
+/*   Created: 2023/10/21 12:10:01 by jhusso            #+#    #+#             */
+/*   Updated: 2023/10/23 08:26:19 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
 
 Fixed::Fixed() : value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-/*
-the copy constructor takes a constant reference
-to an object. It then initializes the value member of the new Fixed
-object with the value of the fixed object
-*/
 Fixed::Fixed(const Fixed& fixed) : value(fixed.value)
 {
 	std::cout << "Copy constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int i) : value(i)
+{
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float f) : value(f)
+{
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
@@ -54,3 +60,17 @@ void	Fixed::setRawBits(int const raw)
 	value = raw;
 }
 
+float Fixed::toFloat(void) const
+{
+	return 0.0f;
+}
+
+int Fixed::toInt(void) const
+{
+	return 0;
+}
+
+std::ostream& operator<<(std::ostream& outs, const Fixed& fixed)
+{
+	return outs << fixed.toFloat();
+}
