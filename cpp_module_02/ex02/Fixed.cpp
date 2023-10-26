@@ -5,11 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 12:10:01 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/26 07:38:23 by jhusso           ###   ########.fr       */
+/*   Created: 2023/10/25 14:36:17 by jhusso            #+#    #+#             */
+/*   Updated: 2023/10/26 11:24:14 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Fixed.hpp"
 #include "Fixed.hpp"
 
 
@@ -25,8 +26,6 @@ Fixed::Fixed(const Fixed& fixed) : value(fixed.value)
 
 Fixed::Fixed(const int i) : value(i << bits)
 {
-	std::cout << i << std::endl;
-	std::cout << (i << bits) << std::endl;
 	std::cout << "Int constructor called" << std::endl;
 }
 
@@ -57,7 +56,6 @@ void	Fixed::setRawBits(int const raw)
 	value = raw;
 }
 
-
 /*
 Converts fixed point values to floating point values
 */
@@ -66,10 +64,16 @@ float Fixed::toFloat(void) const
 	return (static_cast<float>(value) / (1 << bits));
 }
 
+/*
+Converts integer values to floating point values
+*/
 int Fixed::toInt(void) const
 {
 	return value >> bits;
 }
+
+// COMPARISON OPERATORS
+// prints out either true (1) or false (0)
 
 Fixed&	Fixed::operator=(const Fixed& fixed)
 {
@@ -81,6 +85,61 @@ Fixed&	Fixed::operator=(const Fixed& fixed)
 	return *this;
 }
 
+bool Fixed::operator>(const Fixed &fixed) const
+{
+	return this->value > fixed.value;
+}
+
+bool Fixed::operator<(const Fixed &fixed) const
+{
+	return this->value < fixed.value;
+}
+
+bool Fixed::operator>=(const Fixed &fixed) const
+{
+	return this->value >= fixed.value;
+}
+
+bool Fixed::operator<=(const Fixed &fixed) const
+{
+	return this->value <= fixed.value;
+}
+
+bool Fixed::operator==(const Fixed &fixed) const
+{
+	return this->value == fixed.value;
+}
+
+bool Fixed::operator!=(const Fixed &fixed) const
+{
+	return this->value != fixed.value;
+}
+
+// ARITHMETIC OPERATORS
+// these methods return a new Fixed object that is the result of the operation
+
+Fixed Fixed::operator+(const Fixed &fixed) const
+{
+	return Fixed(this->toFloat() + fixed.toFloat());
+}
+
+Fixed Fixed::operator-(const Fixed &fixed) const
+{
+	return Fixed(this->toFloat() - fixed.toFloat());
+}
+
+Fixed Fixed::operator*(const Fixed &fixed) const
+{
+	return Fixed(this->toFloat() * fixed.toFloat());
+}
+
+Fixed Fixed::operator/(const Fixed &fixed) const
+{
+	return Fixed(this->toFloat() / fixed.toFloat());
+}
+
+
+//
 std::ostream& operator<<(std::ostream& outs, const Fixed& fixed)
 {
 	return outs << fixed.toFloat();

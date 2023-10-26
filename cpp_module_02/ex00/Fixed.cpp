@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:33:37 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/23 12:42:59 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/10/26 07:43:53 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,3 @@ void	Fixed::setRawBits(int const raw)
 	std::cout << "setRawBits member function called" << std::endl;
 	value = raw;
 }
-

@@ -5,30 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 12:08:01 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/25 14:33:21 by jhusso           ###   ########.fr       */
+/*   Created: 2023/10/25 14:35:46 by jhusso            #+#    #+#             */
+/*   Updated: 2023/10/26 11:23:41 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef FIXED_H
+#define FIXED_H
 
-#include <string>
 #include <iostream>
 #include <cmath>
 
 class Fixed {
 public:
-			Fixed();
-			Fixed(const Fixed& fixed);
-			Fixed(const int i);
-			Fixed(const float f);
-			~Fixed();
+	Fixed();
+	Fixed(const Fixed& fixed);
+	Fixed(const int i);
+	Fixed(const float f);
+	~Fixed();
+
 	int 	getRawBits(void) const;
 	void	setRawBits(int const raw);
 	float	toFloat(void) const;
 	int		toInt(void) const;
+
+	// COMPARISON OPERATORS
 	Fixed&	operator=(const Fixed& fixed);
+	bool	operator>(const Fixed& fixed) const;
+	bool	operator<(const Fixed& fixed) const;
+	bool	operator>=(const Fixed& fixed) const;
+	bool	operator<=(const Fixed& fixed) const;
+	bool	operator==(const Fixed& fixed) const;
+	bool	operator!=(const Fixed& fixed) const;
+
+	//ARITHMETIC OPERATORS
+	Fixed	operator+(const Fixed& fixed) const;
+	Fixed	operator-(const Fixed& fixed) const;
+	Fixed	operator*(const Fixed& fixed) const;
+	Fixed	operator/(const Fixed& fixed) const;
 
 private:
 	int value;
