@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:10:01 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/26 07:38:23 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/25 11:10:45 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ Fixed::Fixed(const Fixed& fixed) : value(fixed.value)
 
 Fixed::Fixed(const int i) : value(i << bits)
 {
-	std::cout << i << std::endl;
-	std::cout << (i << bits) << std::endl;
 	std::cout << "Int constructor called" << std::endl;
+	// std::cout << i << std::endl;
+	// std::cout << (i << bits) << std::endl;
+	// std::cout << "-----------------------------" << std::endl;
 }
 
 /*
@@ -66,6 +67,7 @@ float Fixed::toFloat(void) const
 	return (static_cast<float>(value) / (1 << bits));
 }
 
+
 int Fixed::toInt(void) const
 {
 	return value >> bits;
@@ -81,6 +83,11 @@ Fixed&	Fixed::operator=(const Fixed& fixed)
 	return *this;
 }
 
+/*
+inserts a floating-point representation
+of the fixed-point number into the output
+stream object passed as parameter.
+*/
 std::ostream& operator<<(std::ostream& outs, const Fixed& fixed)
 {
 	return outs << fixed.toFloat();
