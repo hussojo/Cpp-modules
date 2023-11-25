@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:28:48 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/21 12:05:26 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/25 10:21:38 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 			Fixed(const Fixed& fixed);
 			~Fixed();
 	Fixed&	operator=(const Fixed& fixed);
-	int 	getRawBits(void) const;
+	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 
 private:
