@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:10:15 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/25 11:16:12 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/25 12:24:19 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	Fixed const b(10); // integer constructor
 	Fixed const c(42.42f); // float constructor
 	Fixed const d(b); // copy constructor
-	a = Fixed(1234.4321f); // operand = overload
+	a = Fixed(1234.4321f);
 
 	std::cout << "------------------------------------" << std::endl;
 	std::cout << a.getRawBits() << std::endl;

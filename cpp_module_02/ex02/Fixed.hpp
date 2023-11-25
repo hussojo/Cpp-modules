@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:35:46 by jhusso            #+#    #+#             */
-/*   Updated: 2023/10/26 11:23:41 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/25 14:04:34 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,23 @@ public:
 	bool	operator==(const Fixed& fixed) const;
 	bool	operator!=(const Fixed& fixed) const;
 
-	//ARITHMETIC OPERATORS
+	// ARITHMETIC OPERATORS
 	Fixed	operator+(const Fixed& fixed) const;
 	Fixed	operator-(const Fixed& fixed) const;
 	Fixed	operator*(const Fixed& fixed) const;
 	Fixed	operator/(const Fixed& fixed) const;
+
+	// INCREMENT-DECREMENT OPERATORS
+	Fixed&	operator++();
+	Fixed&	operator--();
+	Fixed	operator++(int);
+	Fixed	operator--(int);
+
+	// MIN MAX
+	static Fixed& max(Fixed& a, Fixed& b);
+	static Fixed& max(const Fixed& a, const Fixed& b);
+	static Fixed& min(Fixed& a, Fixed& b);
+	static Fixed& min(const Fixed& a, const Fixed& b);
 
 private:
 	int value;
