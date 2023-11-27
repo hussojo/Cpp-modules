@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:36:17 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 07:17:06 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/27 10:31:56 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,13 +135,13 @@ Fixed Fixed::operator/(const Fixed &fixed) const
 // INCREMENT-DECREMENT OPERATORS
 Fixed& Fixed::operator++()
 {
-	this->value += 1 << (bits - 1);
+	this->value += 1;
 	return *this;
 }
 
 Fixed &Fixed::operator--()
 {
-	this->value -= 1 << (bits - 1);
+	this->value -= 1;
 	return *this;
 }
 
@@ -195,5 +195,6 @@ Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 
 std::ostream& operator<<(std::ostream& outs, const Fixed& fixed)
 {
-	return outs << fixed.toFloat();
+	outs << fixed.toFloat();
+	return outs;
 }

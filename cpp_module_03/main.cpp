@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 14:28:48 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 08:44:05 by jhusso           ###   ########.fr       */
+/*   Created: 2023/11/27 08:52:49 by jhusso            #+#    #+#             */
+/*   Updated: 2023/11/27 08:54:04 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "ClapTrap.hpp"
 
-#include <string>
-#include <iostream>
-
-class Fixed {
-public:
-			Fixed();
-			Fixed(const Fixed& fixed);
-			~Fixed();
-	Fixed&	operator=(const Fixed& fixed);
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
-
-private:
-	int value;
-	static const int bits = 8;
-} ;
-
-#endif
+int main(void)
+{
+	
+}

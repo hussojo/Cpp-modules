@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 14:28:48 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 08:44:05 by jhusso           ###   ########.fr       */
+/*   Created: 2023/11/27 08:32:12 by jhusso            #+#    #+#             */
+/*   Updated: 2023/11/27 08:38:11 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef CLAPTRAP_H
+#define CLAPTRAP_H
 
-#include <string>
 #include <iostream>
 
-class Fixed {
+class ClapTrap {
 public:
-			Fixed();
-			Fixed(const Fixed& fixed);
-			~Fixed();
-	Fixed&	operator=(const Fixed& fixed);
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
-
+	ClapTrap();
+	ClapTrap(const ClapTrap& claptrap);
+	~ClapTrap();
+	ClapTrap& operator=(const ClapTrap& claptrap);
+	
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 private:
-	int value;
-	static const int bits = 8;
+	std::string name;
+	int health = 10;
+	int energy = 10;
+	int damage = 10;
 } ;
 
 #endif

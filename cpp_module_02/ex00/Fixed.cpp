@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:33:37 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/25 10:12:02 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/27 08:44:05 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed&	Fixed::operator=(const Fixed& fixed)
 	if (this != &fixed)
 	{
 		std::cout << "Copy assignment operator called" << std::endl;
-			value = fixed.value;
+		value = fixed.value;
 	}
 	return *this;
 }
