@@ -6,47 +6,46 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:36:17 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/25 14:09:49 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/27 07:17:06 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include "Fixed.hpp"
 
 Fixed::Fixed() : value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& fixed) : value(fixed.value)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int i) : value(i << bits)
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float f) : value(roundf(f * (1 << bits)))
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return value;
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	// std::cout << "setRawBits member function called" << std::endl;
 	value = raw;
 }
 
@@ -72,7 +71,7 @@ Fixed&	Fixed::operator=(const Fixed& fixed)
 {
 	if (this != &fixed)
 	{
-		std::cout << "Copy assignment operator called" << std::endl;
+		// std::cout << "Copy assignment operator called" << std::endl;
 			value = fixed.value;
 	}
 	return *this;
