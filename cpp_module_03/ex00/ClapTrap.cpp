@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:38:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 12:53:25 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/27 14:30:58 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,36 +48,52 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 
 void ClapTrap::attack(const std::string &target)
 {
-	if (energy != 0 && health != 0)
+	if (energy > 0 && health > 0)
 	{
 		energy--;
 		std::cout << "ClapTrap " << name << " attacks " << target <<
 		", causing " << damage << " points of damage!" << std::endl;
 	}
 	else
-		std::cout << "No more attack or energy points!" << std::endl;
+		std::cout << "No more attack or energy points! Can't attack." << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (energy != 0 && health != 0)
+	if (energy > 0 && health > 0)
 	{
 	health -= amount;
 	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage!" << std::endl;
 	}
 	else
-		std::cout << "No more attack or energy points!" << std::endl;
+		std::cout << "No more attack or energy points! Can't take damage." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (energy != 0 && health != 0)
+	if (energy > 0 && health > 0)
 	{
 	energy--;
 	health += amount;
-	std::cout << "ClapTrap " << name << " repairs it self." << std::endl;
+	std::cout << "ClapTrap " << name << " repairs it self with " << amount
+	<< " points." <<std::endl;
 	}
 	else
-		std::cout << "No more attack or energy points!" << std::endl;
+		std::cout << "No more attack or energy points! Can't be repaired." << std::endl;
 
 }
+
+// int ClapTrap::getHealth(void) const
+// {
+// 	return health;
+// }
+
+// int ClapTrap::getEnergy(void) const
+// {
+// 	return energy;
+// }
+
+// int ClapTrap::getDamage(void) const
+// {
+// 	return damage;
+// }

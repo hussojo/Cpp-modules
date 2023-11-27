@@ -6,19 +6,20 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:52:49 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 12:36:29 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/27 14:31:24 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-// int main(void)
-// {
-// 	ClapTrap Mikko("Mikko");
+int main(void)
+{
+	ClapTrap Mikko("Mikko");
+	Mikko.attack("Pekka");
+	Mikko.takeDamage(5);
+	Mikko.beRepaired(1);
 
-// 	Mikko.attack("Pekka");
-
-// }
+}
 
 // int main(void)
 // {
@@ -69,18 +70,18 @@
 //     return EXIT_SUCCESS;
 // }
 
-int main(void)
-{
-	ClapTrap clappy("Clappy");
-	clappy.attack("Teemu");
-	clappy.takeDamage(4);
-	clappy.beRepaired(2);
-	clappy.attack("June");
-	clappy.takeDamage(7);
-	clappy.attack("Dean");
-	clappy.takeDamage(1);
-	// Should not work
-	clappy.beRepaired(2);
-	clappy.attack("Mark");
-	return 0;
-}
+// int main(void)
+// {
+// 	ClapTrap clappy("Clappy");
+// 	clappy.attack("Teemu");
+// 	clappy.takeDamage(4);
+// 	clappy.beRepaired(2);
+// 	clappy.attack("June");
+// 	clappy.takeDamage(7);
+// 	clappy.attack("Dean");
+// 	clappy.takeDamage(1);
+// 	// Should not work
+// 	clappy.beRepaired(2);
+// 	clappy.attack("Mark");
+// 	return 0;
+// }
