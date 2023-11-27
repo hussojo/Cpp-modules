@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:38:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 11:17:07 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/27 12:53:25 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (energy != 0 && health != 0)
 	{
 	health -= amount;
-	std::cout << "ClapTrap " << name << " takes " << damage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage!" << std::endl;
 	}
 	else
 		std::cout << "No more attack or energy points!" << std::endl;
