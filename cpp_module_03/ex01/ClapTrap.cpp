@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:38:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 14:21:02 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/27 15:27:37 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void ClapTrap::attack(const std::string &target)
 		", causing " << damage << " points of damage!" << std::endl;
 	}
 	else
-		std::cout << "No more attack or energy points!" << std::endl;
+		std::cout << "No more attack or energy points! Can't attack." << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -66,7 +66,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage!" << std::endl;
 	}
 	else
-		std::cout << "No more attack or energy points!" << std::endl;
+		std::cout << "No more attack or energy points! Can't take damage." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -78,6 +78,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << name << " repairs it self." << std::endl;
 	}
 	else
-		std::cout << "No more attack or energy points!" << std::endl;
+		std::cout << "No more attack or energy points! Can't be repaired." << std::endl;
 
 }

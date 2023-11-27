@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:52:49 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 13:15:26 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/27 15:38:55 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,20 @@
 
 // int main(void)
 // {
-// 	ClapTrap Mikko("Mikko");
+// 	ScavTrap Mikko("Mikko");
 
 // 	Mikko.attack("Pekka");
+// 	std::cout << Mikko.getHealth() << std::endl;
+// 	std::cout << Mikko.getEnergy() << std::endl;
+// 	std::cout << Mikko.getDamage() << std::endl;
+// 	Mikko.takeDamage(10);
+// 	std::cout << Mikko.getHealth() << std::endl;
+// 	std::cout << Mikko.getEnergy() << std::endl;
+// 	std::cout << Mikko.getDamage() << std::endl;
+// 	Mikko.beRepaired(20);
+// 	std::cout << Mikko.getHealth() << std::endl;
+// 	std::cout << Mikko.getEnergy() << std::endl;
+// 	std::cout << Mikko.getDamage() << std::endl;
 
 // }
 
