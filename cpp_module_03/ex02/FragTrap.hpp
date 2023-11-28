@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 07:23:42 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 09:19:24 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/28 15:42:46 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 class FragTrap : public ClapTrap {
 public:
-	FragTrap();
 	FragTrap(std::string name);
 	FragTrap(const FragTrap& fragtrap);
 	~FragTrap();
