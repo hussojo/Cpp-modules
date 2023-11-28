@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:56:50 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 15:32:06 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/28 08:40:40 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,11 @@ public:
 	void guardGate();
 	// void takeDamage(unsigned int amount);
 	// void beRepaired(unsigned int amount);
-	int getHealth(void) const;
-	int getEnergy(void) const;
-	int getDamage(void) const;
 
-private:
-	std::string name;
-	unsigned int health;
-	unsigned int energy;
-	unsigned int damage;
+	// FOR DEFENCE
+	// int getHealth(void) const;
+	// int getEnergy(void) const;
+	// int getDamage(void) const;
 } ;
 
 #endif
