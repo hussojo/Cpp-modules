@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	name = "Deffi";
+	name = "Scavvy";
 	health = 100;
 	energy = 50;
 	damage = 20;
