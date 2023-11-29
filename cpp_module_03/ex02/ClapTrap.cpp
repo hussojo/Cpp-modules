@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:38:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 15:42:34 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:24:59 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,24 @@ void ClapTrap::beRepaired(unsigned int amount)
 	else
 		std::cout << "No more attack or energy points! Can't be repaired." << std::endl;
 
+}
+
+std::string ClapTrap::getName(void) const
+{
+	return name;
+}
+
+int ClapTrap::getHealth(void) const
+{
+	return health;
+}
+
+int ClapTrap::getEnergy(void) const
+{
+	return energy;
+}
+
+int ClapTrap::getDamage(void) const
+{
+	return damage;
 }

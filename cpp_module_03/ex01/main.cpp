@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:52:49 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 08:41:40 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:23:27 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@
 int main(void)
 {
 	ScavTrap Mikko("Mikko"); // "name" constructor
-	ScavTrap Pekka(Mikko); // copyconstructor
+	// std::cout << Mikko.getName() << std::endl;
+	ScavTrap Pekka("Pekka"); // "name" constructor
+	// std::cout << Pekka.getName() << std::endl;
+	ScavTrap Maija(Pekka);
+	// std::cout << Maija.getName() << std::endl;
+	// ScavTrap Pekka(Mikko); // copyconstructor
 	std::cout << "---------------------------------------------------------\n";
 	Mikko.attack("Pekka");
 	Pekka.takeDamage(20);

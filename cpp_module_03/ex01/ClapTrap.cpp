@@ -6,16 +6,11 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:38:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 09:00:57 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:23:39 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
-ClapTrap::ClapTrap()
-{
-	std::cout << "ClapTrap default constructor called" << std::endl;
-}
 
 ClapTrap::ClapTrap(std::string name) : name(name), health(10), energy(10), damage(0)
 {
@@ -79,4 +74,24 @@ void ClapTrap::beRepaired(unsigned int amount)
 	else
 		std::cout << "No more attack or energy points! Can't be repaired." << std::endl;
 
+}
+
+std::string ClapTrap::getName(void) const
+{
+	return name;
+}
+
+int ClapTrap::getHealth(void) const
+{
+	return health;
+}
+
+int ClapTrap::getEnergy(void) const
+{
+	return energy;
+}
+
+int ClapTrap::getDamage(void) const
+{
+	return damage;
 }

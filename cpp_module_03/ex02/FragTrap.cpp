@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 07:23:39 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 15:50:11 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:25:35 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,3 @@ void FragTrap::highFivesGuys(void)
 	std::cout << "FragTrap " << name << " wants to give a high five to everyoone!"
 	<< std::endl;
 }
-
-// int FragTrap::getHealth(void) const
-// {
-// 	return health;
-// }
-
-// int FragTrap::getEnergy(void) const
-// {
-// 	return energy;
-// }
-
-// int FragTrap::getDamage(void) const
-// {
-// 	return damage;
-// }

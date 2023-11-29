@@ -6,16 +6,11 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:57:12 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 09:00:54 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:18:31 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-
-ScavTrap::ScavTrap()
-{
-	std::cout << "ScavTrap default constructor called" << std::endl;
-}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
@@ -28,6 +23,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 ScavTrap::ScavTrap(const ScavTrap& scavtrap) : ClapTrap(scavtrap)
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+	this->name = scavtrap.name;
 	this->health = scavtrap.health;
 	this->energy = scavtrap.energy;
 	this->damage = scavtrap.damage;
@@ -66,18 +62,3 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << name << " is now keeping the Gate!" << std::endl;
 }
-
-// int ScavTrap::getHealth(void) const
-// {
-// 	return health;
-// }
-
-// int ScavTrap::getEnergy(void) const
-// {
-// 	return energy;
-// }
-
-// int ScavTrap::getDamage(void) const
-// {
-// 	return damage;
-// }

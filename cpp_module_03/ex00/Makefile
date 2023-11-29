@@ -6,13 +6,13 @@
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 08:53:15 by jhusso            #+#    #+#              #
-#    Updated: 2023/11/27 14:10:58 by jhusso           ###   ########.fr        #
+#    Updated: 2023/11/29 12:19:47 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := claptrap
 CC := c++
-FLAGS := -std=c++98 -Wall -Wextra -Werror -g
+FLAGS := -std=c++98 -Wall -Wextra -Werror
 SRC := main.cpp ClapTrap.cpp
 OBJ := $(SRC:.cpp=.o)
 
@@ -21,6 +21,7 @@ OBJ := $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "Executable: ./$(NAME)"
 	@$(CC) -o $(NAME) $(FLAGS) $(OBJ)
 
 $(OBJ): $(SRC)

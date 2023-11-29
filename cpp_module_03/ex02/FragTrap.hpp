@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 07:23:42 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 15:42:46 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:25:21 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ public:
 	FragTrap& operator=(const FragTrap& fragtrap);
 
 	void highFivesGuys(void);
-
-	// FOR DEFENCE
-	// int getHealth(void) const;
-	// int getEnergy(void) const;
-	// int getDamage(void) const;
 } ;
 
 #endif

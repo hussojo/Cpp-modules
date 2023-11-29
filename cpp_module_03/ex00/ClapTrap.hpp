@@ -6,12 +6,12 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:32:12 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/27 14:31:03 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:24:13 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 
@@ -27,9 +27,10 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
-	// int getHealth(void) const;
-	// int getEnergy(void) const;
-	// int getDamage(void) const;
+	std::string getName(void) const;
+	int getHealth(void) const;
+	int getEnergy(void) const;
+	int getDamage(void) const;
 
 private:
 	std::string name;

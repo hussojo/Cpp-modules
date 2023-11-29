@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:57:12 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 15:51:46 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:26:00 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,4 @@ void ScavTrap::guardGate()
 	std::cout << "ScavTrap " << name << " is now keeping the Gate!" << std::endl;
 }
 
-// int ScavTrap::getHealth(void) const
-// {
-// 	return health;
-// }
-
-// int ScavTrap::getEnergy(void) const
-// {
-// 	return energy;
-// }
-
-// int ScavTrap::getDamage(void) const
-// {
-// 	return damage;
-// }
 

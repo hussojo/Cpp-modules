@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:32:12 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 15:42:30 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:24:55 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ public:
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+
+	std::string getName(void) const;
+	int getHealth(void) const;
+	int getEnergy(void) const;
+	int getDamage(void) const;
 
 protected:
 	std::string name;
