@@ -6,11 +6,20 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:57:12 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/29 12:18:31 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 14:25:39 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	name = "Deffi";
+	health = 100;
+	energy = 50;
+	damage = 20;
+	std::cout << name << " called default constructor" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
@@ -36,13 +45,10 @@ ScavTrap::~ScavTrap()
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
 {
-	if (this != &scavtrap)
-	{
-		this->name = scavtrap.name;
-		this->health = scavtrap.health;
-		this->energy = scavtrap.energy;
-		this->damage = scavtrap.damage;
-	}
+	this->name = scavtrap.name;
+	this->health = scavtrap.health;
+	this->energy = scavtrap.energy;
+	this->damage = scavtrap.damage;
 	return *this;
 }
 
@@ -62,3 +68,4 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << name << " is now keeping the Gate!" << std::endl;
 }
+

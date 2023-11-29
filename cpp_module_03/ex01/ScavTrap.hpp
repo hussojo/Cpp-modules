@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:56:50 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/29 12:20:04 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 14:25:42 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class ScavTrap : public ClapTrap {
 public:
+	ScavTrap();
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap& ScavTrap);
 	~ScavTrap();

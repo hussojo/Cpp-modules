@@ -6,11 +6,16 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 07:23:39 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/29 12:25:35 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/29 13:56:58 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap()
+{
+	std::cout << "FragTrap default constructor called" << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
