@@ -6,7 +6,7 @@
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 08:53:15 by jhusso            #+#    #+#              #
-#    Updated: 2023/11/28 10:37:35 by jhusso           ###   ########.fr        #
+#    Updated: 2023/11/30 07:36:09 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ OBJ := $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "Executable: ./$(NAME)"
 	@$(CC) -o $(NAME) $(FLAGS) $(OBJ)
 
 $(OBJ): $(SRC)

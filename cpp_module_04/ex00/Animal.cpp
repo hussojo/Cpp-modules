@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:18:31 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 07:26:05 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/30 07:37:16 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,7 @@ Animal::Animal(const Animal &other)
 
 Animal &Animal::operator=(const Animal &other)
 {
-<<<<<<< HEAD
-	if (this != &other)
-		this->type_ = other.type_;
-=======
-	if (this > &other)
-		this->type = other.type;
->>>>>>> 109616f55d3bc2b72abee76b39ac527bb60a2d41
+	this->type_ = other.type_;
 	return *this;
 }
 
