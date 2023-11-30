@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:12:49 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 10:52:09 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/30 07:25:54 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,17 @@
 class Animal {
 public:
 	Animal();
-	Animal(std::string type);
 	Animal(const Animal& other);
 	Animal& operator=(const Animal& other);
 	~Animal();
+
+	void makeSound();
+	std::string getType(void) const;
+
 protected:
-	std::string type;
+	std::string type_;
 } ;
+
+
 
 #endif

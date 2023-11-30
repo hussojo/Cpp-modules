@@ -6,37 +6,31 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:28:32 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 10:53:38 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/30 07:23:10 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : Animal()
 {
-	std::cout << "Dog default constructor called" << std::endl;
+	type_ = "Dog";
+	std::cout << type_ << " has been constructed." << std::endl;
 }
 
-Dog::Dog(std::string type) : Animal(type)
+Dog::Dog(const Dog &other) : Animal(other)
 {
-	std::cout << "Dog constructor called with " << type << std::endl;
-	type = "Dog";
-}
-
-Dog::Dog(const Dog &other)
-{
-	std::cout << "Dog copy constructor called" << std::endl;
-	this->type = other.type;
+	*this = other;
+	std::cout << "Dog copy constructor has been called." <<std::endl;
 }
 
 Dog &Dog::operator=(const Dog &other)
 {
-	if (this != &other)
-		this->type = other.type;
+	this->type_ = other.type_;
 	return *this;
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Dog has been destructed." << std::endl;
 }

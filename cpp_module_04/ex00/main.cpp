@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:21:07 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 10:52:21 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/30 07:19:16 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,15 @@
 
 int main(void)
 {
-	Animal first("Natta"); // name constuctor
-	// Animal second; // default constructor
-	// second = first;
-	Dog Mimi("Mimi");
+	std::cout << "-----DEFAULT ANIMAL CONSTRUCTORS-----" << std::endl;
+	Animal a;  // default constructor
+	Animal b(a);  // copy constructor
+	std::cout << "Animal a: " << a.getType() << std::endl;
+	std::cout << "Animal b: " << b.getType() << std::endl;
+	std::cout << "-----------DOG CONSTRUCTORS-----------" << std::endl;
+	Dog c;
+	Dog d(c);
+	std::cout << "Dog c: " << c.getType() << std::endl;
+	std::cout << "Dog d: " << d.getType() << std::endl;
+
 }

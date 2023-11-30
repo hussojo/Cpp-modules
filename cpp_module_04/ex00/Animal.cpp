@@ -6,36 +6,41 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:18:31 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/28 10:25:46 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/30 07:26:05 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal() :  type_("Default animal")
 {
-	std::cout << "Animal default constructor called" << std::endl;
-}
-
-Animal::Animal(std::string type)
-{
-	std::cout << "Animal constructor called with " << type << std::endl;
+	std::cout << type_ << " has been constructed." << std::endl;
 }
 
 Animal::Animal(const Animal &other)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
-	this->type = other.type;
+	this->type_ = other.type_;
+	std::cout << "Animal copy constructor has been called." <<std::endl;
 }
 
 Animal &Animal::operator=(const Animal &other)
 {
 	if (this != &other)
-		this->type = other.type;
+		this->type_ = other.type_;
 	return *this;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Animal has been destructed." << std::endl;
+}
+
+void Animal::makeSound()
+{
+	std::cout << "Default animal sound" << std::endl;
+}
+
+std::string Animal::getType(void) const
+{
+	return type_;
 }
