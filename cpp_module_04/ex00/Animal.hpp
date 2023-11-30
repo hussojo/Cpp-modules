@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:12:49 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 09:10:09 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/30 12:41:16 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ public:
 	Animal();
 	Animal(const Animal& other);
 	Animal& operator=(const Animal& other);
-	~Animal();
+	virtual ~Animal();
 
-	virtual std::string makeSound() const; // virtual??
+	virtual void makeSound() const;
 	std::string getType(void) const;
 
 protected:
