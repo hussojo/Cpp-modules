@@ -26,7 +26,12 @@ Dog::Dog(const Dog &other) : Animal(other)
 
 Dog &Dog::operator=(const Dog &other)
 {
+<<<<<<< HEAD
 	this->type_ = other.type_;
+=======
+	if (this > &other)
+		this->type = other.type;
+>>>>>>> 109616f55d3bc2b72abee76b39ac527bb60a2d41
 	return *this;
 }
 

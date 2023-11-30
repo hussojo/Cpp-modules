@@ -12,9 +12,13 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
-	std::cout << "FragTrap default constructor called" << std::endl;
+	name = "Fraggy";
+	health = 100;
+	energy = 100;
+	damage = 30;
+	std::cout << name << " called default constructor" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -39,7 +43,7 @@ FragTrap::~FragTrap()
 
 FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 {
-	if (this != &fragtrap)
+	if (this > &fragtrap)
 	{
 		this->name = name;
 		this->health = health;
