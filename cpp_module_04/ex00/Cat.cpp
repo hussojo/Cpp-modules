@@ -36,7 +36,7 @@ Cat::~Cat()
 	std::cout << "Cat has been destructed." << std::endl;
 }
 
-std::string Cat::makeSound()
+std::string Cat::makeSound() const
 {
 	return ("Mau Mau Mau Mau");
 }

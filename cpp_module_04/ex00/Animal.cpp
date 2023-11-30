@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:18:31 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 07:53:05 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/30 08:06:38 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Animal::~Animal()
 	std::cout << "Animal has been destructed." << std::endl;
 }
 
-std::string Animal::makeSound()
+std::string Animal::makeSound() const
 {
 	return ("aaaaaaaaaaaaaa");
 }
