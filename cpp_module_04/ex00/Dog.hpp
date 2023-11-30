@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:27:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 07:12:36 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/11/30 07:52:20 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
 	Dog(const Dog& other);
 	Dog& operator=(const Dog& other);
 	~Dog();
+
+	std::string makeSound();
 } ;
 
 #endif

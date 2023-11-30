@@ -1,41 +1,42 @@
+#include "Cat.hpp"
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 10:28:32 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 07:52:25 by jhusso           ###   ########.fr       */
+/*   Created: 2023/11/30 07:55:49 by jhusso            #+#    #+#             */
+/*   Updated: 2023/11/30 07:55:50 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog() : Animal()
+Cat::Cat() : Animal()
 {
-	type_ = "Dog";
+	type_ = "Cat";
 	std::cout << type_ << " has been constructed." << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
 	*this = other;
-	std::cout << "Dog copy constructor has been called." <<std::endl;
+	std::cout << "Cat copy constructor has been called." <<std::endl;
 }
 
-Dog &Dog::operator=(const Dog &other)
+Cat &Cat::operator=(const Cat &other)
 {
 	this->type_ = other.type_;
 	return *this;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Dog has been destructed." << std::endl;
+	std::cout << "Cat has been destructed." << std::endl;
 }
 
-std::string Dog::makeSound()
+std::string Cat::makeSound()
 {
-	return ("Wuf Wuf Wuf Wuf");
+	return ("Mau Mau Mau Mau");
 }
