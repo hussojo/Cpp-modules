@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:27:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 12:07:16 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/01 07:49:42 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
 public:
@@ -24,6 +25,9 @@ public:
 	~Dog();
 
 	void makeSound() const;
+
+private:
+	Brain* ideas;
 } ;
 
 #endif

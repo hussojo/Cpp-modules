@@ -6,14 +6,14 @@
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 08:53:15 by jhusso            #+#    #+#              #
-#    Updated: 2023/12/01 06:57:11 by jhusso           ###   ########.fr        #
+#    Updated: 2023/12/01 08:09:17 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := animal
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror -g
-SRC := main.cpp Animal.cpp Dog.cpp Cat.cpp # WrongAnimal.cpp WrongCat.cpp
+SRC := main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp# WrongAnimal.cpp WrongCat.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re
