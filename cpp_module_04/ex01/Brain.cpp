@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 07:01:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 08:15:39 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/01 10:13:30 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,20 @@ Brain::Brain(const std::string (&ideas)[100]) //paramethrisized constructor
 	(Paramethrisized constructor)" << std::endl;
 }
 
-// Brain::Brain(const Brain &other) // copy
-// {
-// 	std::cout << "Brain copy constructor has been called" << std::endl;
-// }
+Brain::Brain(const Brain &other) // copy constructor
+{
+	std::copy(std::begin(other.ideas), std::end(other.ideas), std::begin(this->ideas));
+	std::cout << "Brain copy constructor has been called" << std::endl;
+}
 
-// Brain &Brain::operator=(const Brain &other) //HOX
-// {
-// 	this->ideas = other.ideas;
-// 	return *this// TODO: insert return statement here
-// }
+Brain& Brain::operator=(const Brain &other)
+{
+	std::copy(std::begin(other.ideas), std::end(other.ideas), std::begin(this->ideas));
+	return *this;
+}
 
 Brain::~Brain()
 {
 	std::cout << "Brain has been destructed" << std::endl;
 }
+

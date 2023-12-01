@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:28:32 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 12:07:07 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/01 10:17:12 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,4 @@ void Dog::makeSound() const
 {
 	std::cout << "Wuf Wuf Wuf Wuf" << std::endl;
 }
+

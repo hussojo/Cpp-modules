@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:21:07 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 08:17:18 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/01 10:05:53 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 // 	std::cout << i->getType() << " " << std::endl;
 // 	i->makeSound(); //will output the cat sound!
 // 	j->makeSound(); //will output the dog sound!
-// 	meta->makeSound(); //will output the default animal soun
+// 	meta->makeSound(); //will output the default animal sound
 // 	delete j;
 // 	delete i;
 // 	delete meta;
@@ -36,8 +36,8 @@
 // 	const WrongAnimal *beta = new WrongAnimal();
 // 	const WrongAnimal *x = new WrongCat();
 // 	std::cout << x->getType() << " " << std::endl;
-// 	x->makeSound(); //will output the cat sound!
-// 	beta->makeSound(); //will output the dog sound!
+// 	x->makeSound(); //will output the default animal sound!
+// 	beta->makeSound(); //will output the default animal sound!
 // 	delete x;
 // 	delete beta;
 
@@ -46,7 +46,7 @@
 
 int main(void)
 {
-	std::cout << "\n-----------------CORRECT-------------------" << std::endl;
+	std::cout << "\n-----------------CONSTRUCT-------------------" << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 
@@ -55,6 +55,8 @@ int main(void)
 	j->makeSound(); //will output the dog sound
 	std:: cout << "Animal says: ";
 	meta->makeSound(); //will output the default animal soun
+	// std::cout << "\n-----------------BRAIN TESTS-------------------" << std::endl;
+	std::cout << "\n-----------------DESTRUCTION-------------------" << std::endl;
 	delete j;
 	delete meta;
 }

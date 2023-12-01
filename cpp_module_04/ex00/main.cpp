@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:21:07 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 14:10:35 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/01 10:05:21 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int main()
 	const WrongAnimal *beta = new WrongAnimal();
 	const WrongAnimal *x = new WrongCat();
 	std::cout << x->getType() << " " << std::endl;
-	x->makeSound(); //will output the cat sound!
-	beta->makeSound(); //will output the dog sound!
+	x->makeSound(); //will output the default animal sound!
+	beta->makeSound(); //will output the default animal sound!
 	delete x;
 	delete beta;
 
