@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:21:07 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 12:38:57 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/01 16:31:20 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,15 @@ int main(void)
 	std::cout << i->getIdea(0) << std::endl;
 	std::cout << i->getIdea(1) << std::endl;
 	std::cout << i->getIdea(101) << std::endl;
+	std::cout << "\n-----------------COPY TESTING-------------------" << std::endl;
+	const Animal* copyD = j;
+	std::cout << "Before changing: " << std::endl;
+	std::cout << "original dog idea: " << j->getIdea(0) << std::endl;
+	std::cout << "copy dog idea: " << copyD->getIdea(0) << std::endl;
+	j->setIdea(0, "BALL!");
+	std::cout << "After changing: " << std::endl;
+	std::cout << "original dog idea: " << j->getIdea(0) << std::endl;
+	std::cout << "copy dog idea: " << copyD->getIdea(0) << std::endl;
 	std::cout << "\n-----------------DESTRUCTION-------------------" << std::endl;
 	delete j;
 	delete i;
