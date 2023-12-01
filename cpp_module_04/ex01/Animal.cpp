@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:18:31 by jhusso            #+#    #+#             */
-/*   Updated: 2023/11/30 12:06:13 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/01 12:14:31 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,16 @@ void Animal::makeSound() const
 std::string Animal::getType(void) const
 {
 	return type_;
+}
+
+void Animal::setIdea(unsigned int i, std::string ideas) const
+{
+	static_cast<void>(i);
+	static_cast<void>(ideas);
+}
+
+std::string Animal::getIdea(unsigned int i) const
+{
+	static_cast<void>(i);
+	return "";
 }
