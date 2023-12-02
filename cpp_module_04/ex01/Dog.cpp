@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:28:32 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 12:43:26 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 06:58:24 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,4 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
 	std::cout << "Wuf Wuf Wuf Wuf" << std::endl;
-}
-
-void Dog::setIdea(unsigned int i, std::string idea) const
-{
-	if (i >= 0 && i <100)
-		_brain->ideas[i] = idea;
-	else
-		std::cout << "Can't set the idea, Dog brain not big enough! (Index out of range)" << std::endl;
-}
-
-std::string Dog::getIdea(unsigned int i) const
-{
-	if (i >= 0 && i <100)
-		return _brain->ideas[i];
-	else
-	{
-		std::cout << "Can't get the idea, Dog not smart enough! (Index out of range)" << std::endl;
-		return "";
-	}
 }

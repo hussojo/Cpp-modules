@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 07:01:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 10:13:30 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 06:58:03 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,23 @@ Brain::~Brain()
 	std::cout << "Brain has been destructed" << std::endl;
 }
 
+
+void Brain::setIdea(unsigned int index, std::string idea)
+{
+	if (index >= 0 && index < 100)
+		ideas[index] = idea;
+	else
+		std::cout << "Brain not big enough! (Index out of range)" << std::endl;
+}
+
+std::string Brain::getIdea(unsigned int index) const
+{
+
+	if (index >= 0 && index < 100)
+		return ideas[index];
+	else
+	{
+		std::cout << "Idea not in brain! (Index out of range)" << std::endl;
+		return "";
+	}
+}

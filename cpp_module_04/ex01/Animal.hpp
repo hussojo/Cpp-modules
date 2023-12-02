@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:12:49 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 12:05:40 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 06:54:10 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ public:
 	virtual void makeSound() const;
 	std::string getType(void) const;
 
-	virtual void setIdea(unsigned int i, std::string ideas) const;
-	virtual std::string getIdea(unsigned int i) const;
+
 
 protected:
 	std::string type_;

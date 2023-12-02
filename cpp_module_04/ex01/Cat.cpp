@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 07:55:49 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 12:43:25 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 06:56:45 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,4 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
 	std::cout << "Mau Mau Mau Mau" << std::endl;
-}
-
-void Cat::setIdea(unsigned int i, std::string idea) const
-{
-	if (i >= 0 && i <100)
-		_brain->ideas[i] = idea;
-	else
-		std::cout << "Can't set the idea, Cat don't want so many ideas! (Index out of range)" << std::endl;
-}
-
-std::string Cat::getIdea(unsigned int i) const
-{
-	if (i >= 0 && i <100)
-		return _brain->ideas[i];
-	else
-	{
-		std::cout << "Can't get the idea, Cat doesn't have so many ideas! (Index out of range)" << std::endl;
-		return "";
-	}
 }

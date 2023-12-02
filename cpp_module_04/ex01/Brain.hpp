@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 06:57:41 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 10:18:28 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 06:55:21 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ public:
 	~Brain();
 
 	std::string ideas[100];
+	void setIdea(unsigned int index, std::string ideas);
+	std::string getIdea(unsigned int index) const;
 } ;
 
 #endif

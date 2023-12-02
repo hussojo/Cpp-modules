@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:27:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/01 12:42:01 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 06:58:24 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ public:
 	~Dog();
 
 	void makeSound() const;
-	void setIdea(unsigned int i, std::string ideas) const;
-	std::string getIdea(unsigned int i) const;
 
 private:
 	Brain* _brain;
