@@ -6,13 +6,13 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 07:01:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 06:58:03 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 09:17:33 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain() // default, can it be with out initializig the array??
+Brain::Brain() // default constructor
 {
 	for (int i = 0; i < 100; i++)
 		ideas[i] = "";
@@ -47,7 +47,10 @@ Brain::~Brain()
 void Brain::setIdea(unsigned int index, std::string idea)
 {
 	if (index >= 0 && index < 100)
+	{
+		std::string("").swap(ideas[index]);
 		ideas[index] = idea;
+	}
 	else
 		std::cout << "Brain not big enough! (Index out of range)" << std::endl;
 }

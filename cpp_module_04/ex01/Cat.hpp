@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 07:55:54 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 06:58:15 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 07:21:43 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 	~Cat();
 
 	void makeSound() const;
+	Brain& getBrain() const;
 
 private:
 	Brain* _brain;
