@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:21:07 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 09:19:51 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/02 09:31:35 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 int main(void)
 {
+	//trying to make an object straight from animal class
+	// Animal animal;
+	// Animal* animal = new Animal;
 	std::cout << "\033[1;32m\n------------------CONSTRUCT HERD-------------------\033[0m" << std::endl;
 	// create and fill an array of Animal objects, half dogs half cats
 	Animal* herd[6];
@@ -35,6 +38,7 @@ int main(void)
 		delete herd[i];
 
 	std::cout << "\033[1;32m\n---------------DEEP COPY TESTING------------------\033[0m" << std::endl;
+
 	std::cout << "\033[1;34m------------------ cat to heap ---------------------\033[0m"<< std::endl;
 	Cat* cat1 = new Cat;
 	cat1->getBrain().setIdea(0, "This is cat1 first idea");
@@ -51,6 +55,7 @@ int main(void)
 	std::cout << "Copycat thought:	" << Copycat->getBrain().getIdea(0) << std::endl;
 	delete cat1;
 	delete Copycat;
+
 	std::cout << "\033[1;34m----------------- dog to stack ---------------------\033[0m"<< std::endl;
 	Dog dog1;
 	dog1.getBrain().setIdea(0, "This is dog1 first idea");
@@ -69,6 +74,6 @@ int main(void)
 	// const Animal* i = new Cat();
 	// delete j; //should not create a leak
 	// delete i;
+
 	std::cout << "\033[1;32m\n-------------------dog destruction--------------------\033[0m" << std::endl;
 }
- 
