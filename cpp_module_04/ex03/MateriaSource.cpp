@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:52:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 12:57:06 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 12:59:06 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ MateriaSource::~MateriaSource()
 // memory so it can be cloned later. Like the Character,
 // the MateriaSource can know at most 4 Materias.
 // They are not necessarily unique.
-
 
 void MateriaSource::learnMateria(AMateria *)
 {
