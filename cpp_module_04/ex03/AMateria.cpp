@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:12:41 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 12:26:07 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 07:23:23 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ AMateria::AMateria(const AMateria &other)
 
 AMateria &AMateria::operator=(const AMateria &other)
 {
-	this->type_ = other.type_;
+	// NONSENSE FUNCTION??
 	return *this;
 }
 
@@ -42,4 +42,14 @@ AMateria::~AMateria()
 std::string const &AMateria::getType() const
 {
 	return type_;
+}
+
+void AMateria::use(ICharacter &target)
+{
+	if (this->getType() == "ice")
+		std::cout << "* shoots an ice bolt at " << target << " *" << std::endl;
+	if (this->getType() == "cure")
+		std::cout << "* heals " << target << " wounds *" << std::endl;
+	else
+		return;
 }

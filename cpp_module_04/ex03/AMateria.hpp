@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:13:00 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 12:26:11 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 06:55:25 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 
 	std::string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;
-	// virtual void use(ICharacter& target);
+	virtual void use(ICharacter& target);
 
 protected:
 	std::string type_;
