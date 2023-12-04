@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:12:41 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 07:23:23 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 11:47:36 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ AMateria::AMateria(const AMateria &other)
 
 AMateria &AMateria::operator=(const AMateria &other)
 {
-	// NONSENSE FUNCTION??
+	this->type_ = other.getType();
 	return *this;
 }
 
@@ -47,9 +47,14 @@ std::string const &AMateria::getType() const
 void AMateria::use(ICharacter &target)
 {
 	if (this->getType() == "ice")
-		std::cout << "* shoots an ice bolt at " << target << " *" << std::endl;
+		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	if (this->getType() == "cure")
-		std::cout << "* heals " << target << " wounds *" << std::endl;
+		std::cout << "* heals " << target.getName() << " wounds *" << std::endl;
 	else
 		return;
 }
+
+// std::ostream &operator<<(std::ostream &os, const AMateria &amateria)
+// {
+// 	std::cout <<
+// }

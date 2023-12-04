@@ -6,14 +6,17 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:13:00 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 06:55:25 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 11:19:30 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
+#include "ICharacter.hpp"
 #include <iostream>
+
+class ICharacter;
 
 class AMateria {
 public:
@@ -30,5 +33,7 @@ public:
 protected:
 	std::string type_;
 } ;
+
+// std::ostream&	operator<<(std::ostream& os, const AMateria& amateria);
 
 #endif

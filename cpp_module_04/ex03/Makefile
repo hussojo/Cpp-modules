@@ -6,14 +6,14 @@
 #    By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 06:52:46 by jhusso            #+#    #+#              #
-#    Updated: 2023/12/04 07:37:30 by jhusso           ###   ########.fr        #
+#    Updated: 2023/12/04 11:43:51 by jhusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := play
 CC := c++
-FLAGS := -std=c++98 -Wall -Wextra -Werror
-SRC := main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp
+FLAGS := -std=c++98 -Wall -Wextra #-Werror
+SRC := main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re
