@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:52:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 14:09:15 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:38:30 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 MateriaSource::MateriaSource()
 {
-	for (int i = 0; i < _mCount; i ++)
+	for (unsigned int i = 0; i < _mCount; i ++)
 		_materias[i] = nullptr;
 	std::cout << "MateriaSource's default constructor called" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
-	for (int i = 0; i < _mCount; i ++)
+	for (unsigned int i = 0; i < _mCount; i ++)
 		_materias[i] = other._materias[i];
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
 	if (this != &other)
-	//WHAT
+		return *this;
 	return *this;
 }
 
 MateriaSource::~MateriaSource()
 {
-	for (int i = 0; i < _mCount; i ++)
+	for (unsigned int i = 0; i < _mCount; i ++)
 		delete _materias[i];
 }
 
@@ -45,10 +45,13 @@ MateriaSource::~MateriaSource()
 
 void MateriaSource::learnMateria(AMateria *m)
 {
-	for (int i = 0; i < _mCount; i++)
+	for (unsigned int i = 0; i < _mCount; i++)
 	{
-		if (_materias[i] = nullptr)
+		if (_materias[i] == nullptr)
+		{
 			_materias[i] = m->clone();
+			return;
+		}
 	}
 }
 // Returns a new Materia. The latter is a copy of the Materia
@@ -58,7 +61,7 @@ void MateriaSource::learnMateria(AMateria *m)
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
-	for (int i = 0; i < _mCount; i++)
+	for (unsigned int i = 0; i < _mCount; i++)
 	{
 		if (_materias[i] != nullptr && _materias[i]->getType() == type)
 			return _materias[i];

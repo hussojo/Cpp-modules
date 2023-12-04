@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:12:41 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 12:56:11 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:31:52 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ std::string const &AMateria::getType() const
 
 void AMateria::use(ICharacter &target)
 {
+	std::cout << "COMING HERE!!!" << std::endl;
 	if (this->getType() == "ice")
 		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	if (this->getType() == "cure")
@@ -55,7 +56,3 @@ void AMateria::use(ICharacter &target)
 		return;
 }
 
-// std::ostream &operator<<(std::ostream &os, const AMateria &amateria)
-// {
-// 	std::cout <<
-// }

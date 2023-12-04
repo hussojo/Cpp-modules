@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:13:00 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 14:10:10 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:27:53 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	AMateria(std::string const & type); //parameterisized constructor
 	AMateria(const AMateria &other); //copy constructor
 	AMateria& operator=(const AMateria &other);
-	~AMateria();
+	virtual ~AMateria();
 
 	std::string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;

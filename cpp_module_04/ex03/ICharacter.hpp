@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:24:37 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 11:41:20 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:28:48 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ public:
 	virtual ~ICharacter() {}
 	virtual std::string const & getName() const = 0;
 	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
+	virtual void unequip(unsigned int idx) = 0;
+	virtual void use(unsigned int idx, ICharacter& target) = 0;
 };
 
 #endif
