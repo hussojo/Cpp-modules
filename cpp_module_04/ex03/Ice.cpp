@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 06:35:28 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 06:51:53 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 12:56:47 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ Ice::Ice(const Ice &other) : AMateria(other)
 
 Ice &Ice::operator=(const Ice &other)
 {
-	this->type_ = other.type_;
+	if (this != &other)
+		this->type_ = other.type_;
 	return *this;
 }
 

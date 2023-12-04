@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:45:10 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 11:41:23 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 12:57:19 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,47 @@
 
 Character::Character()
 {
-	name_ = "";
-	for (int i = 0; i < slot_; i++)
-		inventory[i] = "";
+	_name = "";
+	for (int i = 0; i < _slot; i++)
+		_inventory[i] = nullptr;
 	std::cout << "Character's default constructor called" << std::endl;
 }
 
 Character::Character(std::string name)
 {
-	this->name_ = name;
+	this->_name = name;
+	for (int i = 0; i < _slot; i++)
+		_inventory[i] = nullptr;
 	std::cout << "Character's parameterisized constructor called" << std::endl;
 }
 
 Character::Character(const Character& other)
 {
-	this->name_ = other.name_;
-	for (int i = 0; i < slot_; i++)
-		this->inventory[i] = other.inventory[i];
+	this->_name = other._name;
+	for (int i = 0; i < _slot; i++)
+	{
+		if (other._inventory[i])
+			_inventory[i] = other._inventory[i]->clone();
+		else
+			_inventory[i] = nullptr;
+	}
 	std::cout << "Character's copy constructor called" << std::endl;
 }
 
 Character& Character::operator=(const Character &other)
 {
-	this->name_ = other.name_;
-	for (int i = 0; i < slot_; i++)
-		this->inventory[i] = other.inventory[i];
+	if (this != &other)
+	{
+		this->_name = other._name;
+		for (int i = 0; i < _slot; i++)
+		{
+			delete _inventory[i];
+			if (other._inventory[i])
+				_inventory[i] = other._inventory[i]->clone();
+			else
+				_inventory[i] = nullptr;
+		}
+	}
 	return *this;
 }
 
@@ -49,7 +65,7 @@ Character::~Character()
 
 std::string const &Character::getName() const
 {
-	return name_;
+	return _name;
 }
 
 void Character::equip(AMateria *m)

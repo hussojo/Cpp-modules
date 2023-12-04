@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:39:40 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 11:42:34 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 12:46:55 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ public:
 	virtual void use(int idx, ICharacter& target);
 
 private:
-	std::string name_;
-	static int const slot_ = 4;
-	std::string inventory[slot_];
+	std::string _name;
+	static const unsigned int _slot = 4;
+	AMateria *_inventory[_slot];
 } ;
 
 #endif

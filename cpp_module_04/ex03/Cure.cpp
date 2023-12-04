@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 06:35:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 06:49:42 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 12:56:31 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ Cure::Cure(const Cure &other) : AMateria(other)
 
 Cure &Cure::operator=(const Cure &other)
 {
-	this->type_ = other.type_;
+	if (this != &other)
+		this->type_ = other.type_;
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:12:41 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 11:47:36 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 12:56:11 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ AMateria::AMateria(const AMateria &other)
 
 AMateria &AMateria::operator=(const AMateria &other)
 {
-	this->type_ = other.getType();
+	if (this != &other)
+		this->type_ = other.getType();
 	return *this;
 }
 
