@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:52:08 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 12:44:01 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 14:03:11 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	MateriaSource& operator=(const MateriaSource& other);
 	virtual ~MateriaSource();
 
-	virtual void learnMateria(AMateria*);
+	virtual void learnMateria(AMateria* m);
 	virtual AMateria* createMateria(std::string const & type);
 
 private:

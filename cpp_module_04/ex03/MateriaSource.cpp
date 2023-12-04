@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:52:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 12:59:06 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/04 14:09:15 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ MateriaSource::MateriaSource(const MateriaSource &other)
 MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
 	if (this != &other)
-
+	//WHAT
 	return *this;
 }
 
@@ -43,9 +43,13 @@ MateriaSource::~MateriaSource()
 // the MateriaSource can know at most 4 Materias.
 // They are not necessarily unique.
 
-void MateriaSource::learnMateria(AMateria *)
+void MateriaSource::learnMateria(AMateria *m)
 {
-
+	for (int i = 0; i < _mCount; i++)
+	{
+		if (_materias[i] = nullptr)
+			_materias[i] = m->clone();
+	}
 }
 // Returns a new Materia. The latter is a copy of the Materia
 // previously learned by the MateriaSource whose type equals
@@ -54,5 +58,10 @@ void MateriaSource::learnMateria(AMateria *)
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
+	for (int i = 0; i < _mCount; i++)
+	{
+		if (_materias[i] != nullptr && _materias[i]->getType() == type)
+			return _materias[i];
+	}
 	return nullptr;
 }
