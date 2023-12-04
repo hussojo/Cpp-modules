@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 06:35:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 06:49:42 by jhusso           ###   ########.fr       */
+/*   Created: 2023/12/04 06:35:28 by jhusso            #+#    #+#             */
+/*   Updated: 2023/12/04 06:51:53 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "Ice.hpp"
 
-Cure::Cure() : AMateria("cure")
+Ice::Ice() : AMateria("Ice")
 {
-	std::cout << "Cure default constructor called" << std::endl;
+	std::cout << "Ice default constructor called" << std::endl;
 }
 
-Cure::Cure(const Cure &other) : AMateria(other)
+Ice::Ice(const Ice &other) : AMateria(other)
 {
-	std::cout << "Cure copy constructor called" << std::endl;
+	std::cout << "Ice copy constructor called" << std::endl;
 	*this = other;
 }
 
-Cure &Cure::operator=(const Cure &other)
+Ice &Ice::operator=(const Ice &other)
 {
 	this->type_ = other.type_;
 	return *this;
 }
 
-Cure::~Cure()
+Ice::~Ice()
 {
-	std::cout << "Cure destructor called" << std::endl;
+	std::cout << "Ice destructor called" << std::endl;
 }
 
-AMateria *Cure::clone() const
+AMateria *Ice::clone() const
 {
-	return new Cure(*this); // using the ccopyconstructor
+	return new Ice(*this);
 }

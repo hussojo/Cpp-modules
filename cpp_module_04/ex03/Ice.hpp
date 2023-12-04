@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 12:32:57 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 06:47:24 by jhusso           ###   ########.fr       */
+/*   Created: 2023/12/04 06:34:26 by jhusso            #+#    #+#             */
+/*   Updated: 2023/12/04 06:51:45 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define	CURE_HPP
+#ifndef ICE_HPP
+#define	ICE_HPP
 
 #include "AMateria.hpp"
 
-class Cure : public AMateria {
+class Ice : public AMateria {
 public:
-	Cure();
-	Cure(const Cure &other);
-	Cure& operator=(const Cure &other);
-	~Cure();
-	
+	Ice();
+	Ice(const Ice &other);
+	Ice& operator=(const Ice &other);
+	~Ice();
+
 	AMateria* clone() const;
 } ;
 
