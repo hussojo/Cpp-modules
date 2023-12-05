@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:45:10 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 07:25:35 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 08:02:04 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void Character::equip(AMateria *m)
 	{
 		if (_inventory[i] == nullptr)
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			return;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 06:35:28 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 07:23:07 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 07:59:38 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ Ice::~Ice()
 
 AMateria *Ice::clone() const
 {
+	std::cout << "Ice clone() called" << std::endl;
 	return new Ice(*this);
 }

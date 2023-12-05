@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:52:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 07:24:07 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 07:51:11 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void MateriaSource::learnMateria(AMateria *m)
 	{
 		if (_materias[i] == nullptr)
 		{
-			_materias[i] = m->clone();
+			_materias[i] = m;
 			return;
 		}
 	}
@@ -67,7 +67,6 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 		if (_materias[i] != nullptr && _materias[i]->getType() == type)
 			return _materias[i];
 	}
-	std::cout << "Im hetre returning " <<  std::endl;
 	return nullptr;
 }
 
