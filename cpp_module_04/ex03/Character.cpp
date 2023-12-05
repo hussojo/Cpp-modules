@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:45:10 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 10:54:46 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 10:58:14 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,6 @@ void Character::use(unsigned int idx, ICharacter &target)
 {
 	if (idx >= 0 && idx < _slot && _inventory[idx] != nullptr)
 		_inventory[idx]->use(target);
+	else
+		std::cout << "\033[33m Materia index out of range \033[0m" << std::endl;
 }
