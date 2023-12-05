@@ -6,11 +6,12 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:45:10 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 08:02:04 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 09:50:00 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "Trash.hpp"
 
 Character::Character()
 {
@@ -88,7 +89,9 @@ void Character::unequip(unsigned int idx)
 {
 	if (idx >= 0 && idx < _slot)
 	{
-		// how i want to handle the unequiped?
+		Trash* unequiped = new Trash(_inventory[idx]);
+		unequiped->next = trashHead;
+		trashHead = unequiped;
 		_inventory[idx] = nullptr;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:39:40 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 08:51:50 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 09:47:10 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "ICharacter.hpp"
 
 class ICharacter;
+class Trash;
 
 class Character : public ICharacter {
 public:
@@ -30,6 +31,8 @@ public:
 	virtual void equip(AMateria* m);
 	virtual void unequip(unsigned int idx);
 	virtual void use(unsigned int idx, ICharacter& target);
+
+	Trash* trashHead;
 
 private:
 	std::string _name;
