@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:52:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 15:38:30 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 07:24:07 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ MateriaSource::~MateriaSource()
 {
 	for (unsigned int i = 0; i < _mCount; i ++)
 		delete _materias[i];
+	std::cout << "MateriaSource's destructor called" << std::endl;
 }
 
 // Copies the Materia passed as a parameter and store it in
@@ -66,5 +67,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 		if (_materias[i] != nullptr && _materias[i]->getType() == type)
 			return _materias[i];
 	}
+	std::cout << "Im hetre returning " <<  std::endl;
 	return nullptr;
 }
+

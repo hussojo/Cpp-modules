@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:45:10 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/04 15:31:04 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 07:25:35 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,10 @@ void Character::equip(AMateria *m)
 	for (unsigned int i = 0; i < _slot; i++)
 	{
 		if (_inventory[i] == nullptr)
+		{
 			_inventory[i] = m->clone();
+			return;
+		}
 	}
 }
 
@@ -97,6 +100,6 @@ Materia at the slot[idx], and pass the target parameter
 to the AMateria::use function.*/
 void Character::use(unsigned int idx, ICharacter &target)
 {
-	// if (idx >= 0 && idx < _slot && _inventory[idx] != nullptr)
+	if (idx >= 0 && idx < _slot && _inventory[idx] != nullptr)
 		_inventory[idx]->use(target);
 }
