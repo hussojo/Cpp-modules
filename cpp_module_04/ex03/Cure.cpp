@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 06:35:24 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 07:38:15 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 10:28:45 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Cure default constructor called" << std::endl;
+	// std::cout << "Cure default constructor called" << std::endl;
 }
 
 Cure::Cure(const Cure &other) : AMateria(other)
 {
-	std::cout << "Cure copy constructor called" << std::endl;
+	// std::cout << "Cure copy constructor called" << std::endl;
 	*this = other;
 }
 
@@ -32,11 +32,11 @@ Cure &Cure::operator=(const Cure &other)
 
 Cure::~Cure()
 {
-	std::cout << "Cure destructor called" << std::endl;
+	// std::cout << "Cure destructor called" << std::endl;
 }
 
 AMateria *Cure::clone() const
 {
-	std::cout << "Cure clone() called" << std::endl;
+	// std::cout << "Cure clone() called" << std::endl;
 	return new Cure(*this); // using the ccopyconstructor
 }

@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:12:41 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 06:57:44 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 10:43:11 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 AMateria::AMateria()
 {
-	std::cout << "AMateria default constructor called" << std::endl;
+	// std::cout << "AMateria default constructor called" << std::endl;
 }
 
 AMateria::AMateria(std::string const &type) : type_(type)
 {
-	std::cout << "AMateria parameterisized constructor called" << std::endl;
+	// std::cout << "AMateria parameterisized constructor called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &other)
 {
 	*this = other;
-	std::cout << "AMateria copy constructor called" << std::endl;
+	// std::cout << "AMateria copy constructor called" << std::endl;
 }
 
 AMateria &AMateria::operator=(const AMateria &other)
@@ -37,7 +37,7 @@ AMateria &AMateria::operator=(const AMateria &other)
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria destructor called" << std::endl;
+	// std::cout << "AMateria destructor called" << std::endl;
 }
 
 std::string const &AMateria::getType() const
@@ -48,9 +48,9 @@ std::string const &AMateria::getType() const
 void AMateria::use(ICharacter &target)
 {
 	if (this->getType() == "ice")
-		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+		std::cout << "\033[33m * shoots an ice bolt at " << target.getName() << " * \033[0m" << std::endl;
 	if (this->getType() == "cure")
-		std::cout << "* heals " << target.getName() << " wounds *" << std::endl;
+		std::cout << "\033[33m * heals " << target.getName() << "'s wounds * \033[0m" << std::endl;
 	else
 		return;
 }

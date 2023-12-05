@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:45:10 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 09:58:50 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 10:54:46 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Character::Character()
 	_name = "";
 	for (unsigned int i = 0; i < _slot; i++)
 		_inventory[i] = nullptr;
-	std::cout << "Character's default constructor called" << std::endl;
+	// std::cout << "Character's default constructor called" << std::endl;
 }
 
 Character::Character(std::string name)
@@ -26,7 +26,7 @@ Character::Character(std::string name)
 	this->_name = name;
 	for (unsigned int i = 0; i < _slot; i++)
 		_inventory[i] = nullptr;
-	std::cout << "Character's parameterisized constructor called" << std::endl;
+	std::cout << "Created new character named: " << name << std::endl;
 }
 
 Character::Character(const Character& other)
@@ -39,7 +39,7 @@ Character::Character(const Character& other)
 		else
 			_inventory[i] = nullptr;
 	}
-	std::cout << "Character's copy constructor called" << std::endl;
+	// std::cout << "Character's copy constructor called" << std::endl;
 }
 
 Character& Character::operator=(const Character &other)
@@ -61,7 +61,7 @@ Character& Character::operator=(const Character &other)
 
 Character::~Character()
 {
-	std::cout << "Character destructor called" << std::endl;
+	// std::cout << "Character destructor called" << std::endl;
 }
 
 std::string const &Character::getName() const
@@ -80,9 +80,12 @@ void Character::equip(AMateria *m)
 		if (_inventory[i] == nullptr)
 		{
 			_inventory[i] = m;
+			std::cout << "\033[35m Equiped new " << m->getType() << "\tSLOT:" << i
+			<< "\033[0m" << std::endl;
 			return;
 		}
 	}
+	std::cout << "Wasn't able to equip!" << std::endl;
 }
 
 void Character::unequip(unsigned int idx)
@@ -93,10 +96,15 @@ void Character::unequip(unsigned int idx)
 		unequiped->next = trashHead;
 		trashHead = unequiped;
 		delete unequiped;
+		std::cout << "\033[31m unequiped (" << _inventory[idx]->getType()
+		<< ")\tSLOT:" << idx << "\033[0m" << std::endl;
 		_inventory[idx] = nullptr;
 	}
 	else
+	{
+		std::cout << "Wasn't able to unequip!" << std::endl;
 		return;
+	}
 }
 
 /* The use(int, ICharacter&) member function will have to use the
