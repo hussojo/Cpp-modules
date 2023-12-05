@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:45:10 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 09:50:00 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 09:58:50 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void Character::unequip(unsigned int idx)
 		Trash* unequiped = new Trash(_inventory[idx]);
 		unequiped->next = trashHead;
 		trashHead = unequiped;
+		delete unequiped;
 		_inventory[idx] = nullptr;
 	}
 	else
