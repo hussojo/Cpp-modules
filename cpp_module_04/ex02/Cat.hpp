@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 07:55:54 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 07:21:43 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 13:09:46 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ public:
 	Cat();
 	Cat(const Cat& other);
 	Cat& operator=(const Cat& other);
-	~Cat();
+	virtual ~Cat();
 
-	void makeSound() const;
+	virtual void makeSound() const;
 	Brain& getBrain() const;
 
 private:
