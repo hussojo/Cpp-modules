@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:21:07 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 09:19:51 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 12:40:51 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(void)
 			herd[i] = new Cat;
 	}
 
-	std::cout << "\033[1;32m\n-----------------DECONSTRUCT HERD-----------------\033[0m" << std::endl;
+	std::cout << "\033[1;32m\n-----------------DESTRUCT HERD-----------------\033[0m" << std::endl;
 	// loop over the array and delete every Animal
 	for (int i = 0; i < 6; i++)
 		delete herd[i];
@@ -71,4 +71,3 @@ int main(void)
 	// delete i;
 	std::cout << "\033[1;32m\n-------------------dog destruction--------------------\033[0m" << std::endl;
 }
- 

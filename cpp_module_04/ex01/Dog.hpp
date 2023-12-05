@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:27:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 07:22:19 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 12:50:47 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ public:
 	Dog();
 	Dog(const Dog& other);
 	Dog& operator=(const Dog& other);
-	~Dog();
+	virtual ~Dog();
 
-	void makeSound() const;
+	virtual void makeSound() const;
 	Brain& getBrain() const;
 
 private:

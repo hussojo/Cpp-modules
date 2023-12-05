@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:12:49 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/02 06:54:10 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 12:40:22 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ public:
 
 	virtual void makeSound() const;
 	std::string getType(void) const;
-
-
 
 protected:
 	std::string type_;
