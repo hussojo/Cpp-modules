@@ -6,7 +6,7 @@
 /*   By: jhusso <jhusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:52:25 by jhusso            #+#    #+#             */
-/*   Updated: 2023/12/05 10:36:37 by jhusso           ###   ########.fr       */
+/*   Updated: 2023/12/05 11:03:19 by jhusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void MateriaSource::learnMateria(AMateria *m)
 			return;
 		}
 	}
+	std::cout << "\033[32m Could not learn \"" << m->getType() << "\"\033[0m" << std::endl;
 }
 /* Returns a new Materia. The latter is a copy of the Materia
 previously learned by the MateriaSource whose type equals
@@ -69,6 +70,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 			return _materias[i];
 		}
 	}
+	std::cout << "\033[36m Could not create \"" << type << "\"\033[0m" << std::endl;
 	return nullptr;
 }
 
