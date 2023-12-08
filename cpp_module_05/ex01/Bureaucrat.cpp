@@ -8,7 +8,7 @@ Bureaucrat::Bureaucrat() : _name(""), _grade(0)
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
 	checkGrade(*this);
-	std::cout << "Created bureaucrat with name and grade" << std::endl;
+	// std::cout << "Created bureaucrat with name and grade" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -82,7 +82,7 @@ void Bureaucrat::signForm(Form &f)
 	try
 	{
 		if (f.getIsSigned() == true)
-			std::cout << this << " signed " << f << std::endl;
+			std::cout << this->getName() << " signed " << f.getName() << std::endl;
 	}
 	catch (const std::exception &e)
 	{

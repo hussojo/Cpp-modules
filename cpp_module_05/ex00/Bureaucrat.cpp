@@ -71,7 +71,7 @@ void Bureaucrat::checkGrade(const Bureaucrat &b) const
 		throw Bureaucrat::GradeTooLowException();
 }
 
-std::ostream &operator<<(std::ostream& os, const Bureaucrat& b)
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << std::endl;
 	return os;

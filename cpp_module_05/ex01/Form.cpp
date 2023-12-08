@@ -7,7 +7,7 @@ Form::Form() : _name(""), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
 }
 
 Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute) :_name(name),
- _gradeToSign(_gradeToSign), _gradeToExecute(_gradeToExecute)
+ _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
 	_isSigned = false;
 }
@@ -20,7 +20,7 @@ Form::Form(const Form &other) : _name(other._name), _isSigned(other._isSigned),
 
 Form::~Form()
 {
-	std::cout << "Form default destructor called!" << std::endl;
+	// std::cout << "Form destructor called!" << std::endl;
 }
 
 Form &Form::operator=(const Form &other)
@@ -38,12 +38,17 @@ void Form::checkGrade(const Form &f) const
 		throw Form::GradeTooLowException();
 }
 
-void Form::beSigned(Bureaucrat &b)
+void Form::beSigned(Bureaucrat &b) // ADD IF ALREADY SIGNED?? DOES NOPT WORK
 {
-	if (b.getGrade() <= this->getGradeToSign())
-		_isSigned = true;
+	if (this->_isSigned == false)
+	{
+		if (b.getGrade() <= this->getGradeToSign())
+			_isSigned = true;
+		else
+			throw Form::GradeTooLowException();
+	}
 	else
-		throw Form::GradeTooLowException();
+		std::cout << this->getName() << " is already signed" << std::endl;
 }
 
 std::string Form::getName() const
@@ -78,10 +83,11 @@ const char *Form::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &os, const Form &f)
 {
-	os << "Name: " << f.getName() <<
-	"\tSigned: " << f.getIsSigned() <<
-	"\tGrade to Sign: " << f.getGradeToSign() <<
-	"\tGrade to Execute: " << f.getGradeToExecute() << std::endl;
+	os << "--form info--" <<
+	"\nName: " << f.getName() <<
+	"\nSigned: " << f.getIsSigned() <<
+	"\nGrade to Sign: " << f.getGradeToSign() <<
+	"\nGrade to Execute: " << f.getGradeToExecute() << std::endl;
 
 	return os;
 }

@@ -31,6 +31,6 @@ class Bureaucrat {
 		unsigned int _grade;
 } ;
 
-std::ostream &operator<<(std::ostream& os, const Bureaucrat& b);
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
 
 #endif
