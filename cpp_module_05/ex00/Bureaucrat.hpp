@@ -18,6 +18,7 @@ class Bureaucrat {
 		class GradeTooLowException : public std::exception {
 			public: const char* what() const throw();	};
 
+		void checkGrade(const Bureaucrat &b) const ;
 		void incrementGrade();
 		void decrementGrade();
 
