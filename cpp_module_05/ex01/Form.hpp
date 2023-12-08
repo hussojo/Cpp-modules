@@ -17,11 +17,17 @@ class Form {
 		// beSigned
 		// signForm
 
+	/*
+	Same as before, write getters for all attributes and an
+	overload of the insertion («) operator that prints all the form’s informations.
+	*/
+
 		class GradeTooHighException : public std::exception {
 			public: const char* what() const throw(); };
 		class GradeTooLowException : public std::exception {
 			public: const char* what() const throw();	};
 
+		// getters and setters
 
 	private:
 		const std::string _name;

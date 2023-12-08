@@ -22,10 +22,14 @@ class Bureaucrat {
 		void incrementGrade();
 		void decrementGrade();
 
+	/*
+	You will implement an overload of the insertion («) operator to print
+	something like (without the angle brackets):
+	<name>, bureaucrat grade <grade>.
+	*/
+
 		std::string getName() const;
 		unsigned int getGrade() const;
-
-		// increment and decrement grade!
 
 	private:
 		std::string _name;

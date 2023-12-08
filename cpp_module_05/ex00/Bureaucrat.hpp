@@ -10,8 +10,10 @@ class Bureaucrat {
 		Bureaucrat();
 		Bureaucrat(const std::string name, unsigned int grade);
 		Bureaucrat(const Bureaucrat &other);
-		Bureaucrat &operator=(const Bureaucrat &other);
 		~Bureaucrat();
+
+		Bureaucrat &operator=(const Bureaucrat &other);
+		Bureaucrat &operator<<(const Bureaucrat &other);
 
 		class GradeTooHighException : public std::exception {
 			public: const char* what() const throw(); };
@@ -25,7 +27,11 @@ class Bureaucrat {
 		std::string getName() const;
 		unsigned int getGrade() const;
 
-		// increment and decrement grade!
+	/*
+	You will implement an overload of the insertion («) operator to print
+	something like (without the angle brackets):
+	<name>, bureaucrat grade <grade>.
+	*/
 
 	private:
 		std::string _name;
