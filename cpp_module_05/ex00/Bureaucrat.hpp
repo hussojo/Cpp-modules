@@ -13,7 +13,6 @@ class Bureaucrat {
 		~Bureaucrat();
 
 		Bureaucrat &operator=(const Bureaucrat &other);
-		Bureaucrat &operator<<(const Bureaucrat &other);
 
 		class GradeTooHighException : public std::exception {
 			public: const char* what() const throw(); };
@@ -27,15 +26,11 @@ class Bureaucrat {
 		std::string getName() const;
 		unsigned int getGrade() const;
 
-	/*
-	You will implement an overload of the insertion («) operator to print
-	something like (without the angle brackets):
-	<name>, bureaucrat grade <grade>.
-	*/
-
 	private:
 		std::string _name;
 		unsigned int _grade;
 } ;
+
+std::ostream &operator<<(std::ostream& os, const Bureaucrat& b);
 
 #endif

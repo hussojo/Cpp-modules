@@ -8,13 +8,18 @@ Bureaucrat::Bureaucrat() : _name(""), _grade(0)
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
 	checkGrade(*this);
-	std::cout << "Created bureaucrat called\n\tname: " << _name << "\n\tgrade: " << _grade << std::endl;
+	std::cout << "Created bureaucrat with name and grade" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
 {
 	checkGrade(other);
 	*this = other;
+}
+
+Bureaucrat::~Bureaucrat()
+{
+	std::cout << "Bureaucrat destructed!" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
@@ -25,11 +30,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 		_grade = other._grade;
 	}
 	return *this;
-}
-
-Bureaucrat::~Bureaucrat()
-{
-	std::cout << "Bureaucrat destructed!" << std::endl;
 }
 
 void Bureaucrat::incrementGrade()
@@ -69,4 +69,10 @@ void Bureaucrat::checkGrade(const Bureaucrat &b) const
 		throw Bureaucrat::GradeTooHighException();
 	if (b._grade > 150 )
 		throw Bureaucrat::GradeTooLowException();
+}
+
+std::ostream &operator<<(std::ostream& os, const Bureaucrat& b)
+{
+	os << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << std::endl;
+	return os;
 }
