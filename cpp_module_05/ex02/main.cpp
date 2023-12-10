@@ -13,7 +13,6 @@ int main()
 		form1.beSigned(cat2);
 		cat2.signForm(form1);
 
-		form1.plantShruberry("School");
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

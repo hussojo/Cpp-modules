@@ -43,7 +43,7 @@ void ShrubberyCreationForm::plantShruberry(const std::string &target)
 
 	for (int i = 0; i < 10 ; i++)
 	{
-		file << "ASCII Tree " << i + 1 << std::endl;
+		file << " Tree nro " << i + 1 << std::endl;
 		file << "    ^    " << std::endl;
 		file << "   ^^^   " << std::endl;
 		file << "  ^^^^^  " << std::endl;
