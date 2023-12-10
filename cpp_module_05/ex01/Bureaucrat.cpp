@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat() : _name(""), _grade(0)
 {
-		std::cout << "Bureaucrat (default) created!" << std::endl;
+		// std::cout << "Bureaucrat (default) created!" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade)
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destructed!" << std::endl;
+	// std::cout << "Bureaucrat destructed!" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
@@ -83,6 +83,9 @@ void Bureaucrat::signForm(Form &f)
 	{
 		if (f.getIsSigned() == true)
 			std::cout << this->getName() << " signed " << f.getName() << std::endl;
+
+		else
+			std::cout << f.getName() << " is already signed!" << std::endl;
 	}
 	catch (const std::exception &e)
 	{

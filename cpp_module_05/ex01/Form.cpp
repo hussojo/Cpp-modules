@@ -3,7 +3,7 @@
 Form::Form() : _name(""), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
 {
 	checkGrade(*this);
-	std::cout << "Form default constructor called!" << std::endl;
+	// std::cout << "Form (default) created!" << std::endl;
 }
 
 Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute) :_name(name),
@@ -38,17 +38,12 @@ void Form::checkGrade(const Form &f) const
 		throw Form::GradeTooLowException();
 }
 
-void Form::beSigned(Bureaucrat &b) // ADD IF ALREADY SIGNED?? DOES NOPT WORK
+void Form::beSigned(Bureaucrat &b)
 {
-	if (this->_isSigned == false)
-	{
-		if (b.getGrade() <= this->getGradeToSign())
-			_isSigned = true;
-		else
-			throw Form::GradeTooLowException();
-	}
+	if (b.getGrade() <= this->getGradeToSign())
+		_isSigned = true;
 	else
-		std::cout << this->getName() << " is already signed" << std::endl;
+		throw Form::GradeTooLowException();
 }
 
 std::string Form::getName() const
