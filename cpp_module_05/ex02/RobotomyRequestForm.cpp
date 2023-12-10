@@ -7,7 +7,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) :
-AForm("RobotomyRequestForm", 145, 137)
+AForm("RobotomyRequestForm", 72, 45)
 {
 	_target = target;
 	// std::cout << "RobotomyRequestForm created with target" << std::endl;
