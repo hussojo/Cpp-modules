@@ -13,7 +13,7 @@ class AForm {
 		AForm();
 		AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute);
 		AForm(const AForm &other);
-		~AForm();
+		virtual ~AForm() = 0;
 
 		AForm& operator=(const AForm &other);
 
