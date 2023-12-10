@@ -31,15 +31,15 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	// std::cout << "RobotomyRequestForm destructed" << std::endl;
 }
 
-void RobotomyRequestForm::requestRobotomy(const std::string &target)
+void RobotomyRequestForm::executeForm() const
 {
-	std::srand(std::time(0)); // use current time as seed for random generator
-	int random_variable = std::rand() % 100; // generates random number between 0 and 99
+	std::srand(std::time(0));
+	int random_variable = std::rand() % 100;
 
-	std::cout << "*drilling noice*\t*drilling noice*" << std::endl;
+	std::cout << "*** drrrrrrrrrrrrilling noice ***" << std::endl;
 	if (random_variable < 50)
-		std::cout << target << " has been robotomized successfully!" << std::endl;
+		std::cout << _target << " has been robotomized successfully!" << std::endl;
 	else
-		std::cout << "Robotomy of " << target << " failed! SOS" << std::endl;
+		std::cout << "Robotomy of " << _target << " failed! SOS" << std::endl;
 }
 

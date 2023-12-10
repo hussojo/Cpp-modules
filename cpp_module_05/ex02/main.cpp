@@ -1,18 +1,36 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
-	std::cout << "\n-------BUREAUCRAT 1--------" << std::endl;
 	try {
-		Bureaucrat cat2("Masa", 15);
-		std::cout << cat2 << std::endl;
-		ShrubberyCreationForm form1;
-		std::cout << form1 << std::endl;
+		Bureaucrat masa("Masa", 15);
+		std::cout << masa << std::endl;
+		ShrubberyCreationForm scf("home");
+		std::cout << scf << std::endl;
 
-		form1.beSigned(cat2);
-		cat2.signForm(form1);
+		scf.beSigned(masa);
+		masa.signForm(scf);
+		scf.execute(masa);
 
+		Bureaucrat tepa("Tepa", 10);
+		Bureaucrat menni("Menni", 1);
+		std::cout << tepa << std::endl;
+		PresidentialPardonForm ppf("Teemu");
+		std::cout << ppf << std::endl;
+
+		ppf.beSigned(tepa);
+		tepa.signForm(ppf);
+		ppf.execute(menni);
+
+		RobotomyRequestForm rrf("Karen");
+		std::cout << rrf << std::endl;
+
+		rrf.beSigned(menni);
+		menni.signForm(rrf);
+		rrf.execute(menni);
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

@@ -4,8 +4,6 @@
 #include "AForm.hpp"
 #include <fstream>
 
-class AForm;
-
 class ShrubberyCreationForm : public AForm {
 	public:
 		ShrubberyCreationForm();
@@ -14,7 +12,7 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
 		virtual ~ShrubberyCreationForm();
 
-		void plantShruberry(const std::string &target);
+		virtual void executeForm() const;
 
 	private:
 		std::string _target;

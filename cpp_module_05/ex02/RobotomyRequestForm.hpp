@@ -4,7 +4,6 @@
 #include "AForm.hpp"
 #include <ctime>
 
-class AForm;
 
 class RobotomyRequestForm : public AForm {
 	public:
@@ -14,7 +13,7 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
 		virtual ~RobotomyRequestForm();
 
-		void requestRobotomy(const std::string &target);
+		virtual void executeForm() const;
 
 	private:
 		std::string _target;

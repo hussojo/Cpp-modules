@@ -8,18 +8,20 @@
 
 class Bureaucrat;
 
+
 class AForm {
 	public:
 		AForm();
 		AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute);
 		AForm(const AForm &other);
-		virtual ~AForm() = 0;
+		virtual ~AForm();
 
 		AForm& operator=(const AForm &other);
 
 		void checkGrade(const AForm &f) const;
-
 		void beSigned(Bureaucrat &b);
+		void execute(Bureaucrat const & executor) const;
+		virtual void executeForm() const;
 
 		class GradeTooHighException : public std::exception {
 			public: const char* what() const throw(); };

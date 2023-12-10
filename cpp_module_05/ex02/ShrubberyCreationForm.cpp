@@ -31,9 +31,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	// std::cout << "ShrubberyCreationForm destructed" << std::endl;
 }
 
-void ShrubberyCreationForm::plantShruberry(const std::string &target)
+void ShrubberyCreationForm::executeForm() const
 {
-	std::ofstream file(target + "_shrubbery");
+	std::ofstream file(_target + "_shrubbery");
 
 	if (!file)
 	{

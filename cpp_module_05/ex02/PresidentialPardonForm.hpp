@@ -3,7 +3,7 @@
 
 #include "AForm.hpp"
 
-class AForm;
+// class AForm;
 
 class PresidentialPardonForm : public AForm {
 	public:
@@ -13,7 +13,7 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 		virtual ~PresidentialPardonForm();
 
-		// void requestRobotomy(const std::string &target);
+		virtual void executeForm() const;
 
 	private:
 		std::string _target;
