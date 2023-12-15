@@ -39,7 +39,7 @@ Intern::~Intern()
 }
 
 //ADD delete, for all pointers that are not returned and if none is returned delete all
-AForm &Intern::makeForm(std::string formName, std::string formTarget)
+AForm *Intern::makeForm(std::string formName, std::string formTarget)
 {
 	const int formCount = 3;
 	std::string formArr[formCount] = {"PresidentialPardonForm",
@@ -50,12 +50,18 @@ AForm &Intern::makeForm(std::string formName, std::string formTarget)
 
 	for (int i = 0; i < formCount; i++)
 	{
-		std::cout << "array addresses: " << formptr[i] << std::endl;
 		if (formName == formArr[i])
 		{
 			std::cout << "Intern creates " << formName << "." << std::endl;
-			return *formptr[i];
+			for (int j = 0; j < formCount; j++)
+			{
+				if (j != i)
+					delete formptr[j];
+			}
+			return formptr[i];
 		}
 	}
+	for (int j = 0; j < formCount; j++)
+			delete formptr[j];
 	throw std::invalid_argument("Form name invalid, intern is confused");
 }

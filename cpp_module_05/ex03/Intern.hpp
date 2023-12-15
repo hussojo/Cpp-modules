@@ -8,7 +8,7 @@ class Intern {
 		Intern();
 		~Intern();
 
-		AForm &makeForm(std::string formName, std::string formTarget);
+		AForm *makeForm(std::string formName, std::string formTarget);
 
 
 	private:

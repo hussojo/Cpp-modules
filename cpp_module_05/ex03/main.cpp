@@ -8,10 +8,11 @@ int main()
 {
 	try {
 		Intern i;
-		AForm form1 = i.makeForm("ShrubberyCreationForm", "home");
-		// Bureaucrat masa("Masa", 15);
-		// std::cout << masa << std::endl;
-		// std::cout << form1 << std::endl;
+		AForm* form1 = i.makeForm("ShrubberyCreationForm", "home");
+		Bureaucrat masa("Masa", 15);
+		std::cout << masa << std::endl;
+		std::cout << *form1 << std::endl;
+		delete form1;
 
 		// masa.signForm(form1);
 		// form1.execute(masa);
