@@ -11,24 +11,21 @@ int main()
 		ShrubberyCreationForm scf("home");
 		std::cout << scf << std::endl;
 
-		scf.beSigned(masa);
 		masa.signForm(scf);
 		scf.execute(masa);
 
-		Bureaucrat tepa("Tepa", 10);
-		Bureaucrat menni("Menni", 1);
+		Bureaucrat tepa("Tepa", 60);
+		Bureaucrat menni("Menni", 80);
 		std::cout << tepa << std::endl;
 		PresidentialPardonForm ppf("Teemu");
 		std::cout << ppf << std::endl;
 
-		ppf.beSigned(tepa);
 		tepa.signForm(ppf);
 		ppf.execute(menni);
 
 		RobotomyRequestForm rrf("Karen");
 		std::cout << rrf << std::endl;
 
-		rrf.beSigned(menni);
 		menni.signForm(rrf);
 		rrf.execute(menni);
 	}

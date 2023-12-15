@@ -56,12 +56,12 @@ unsigned int Bureaucrat::getGrade() const
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	 return "Grade is too high!";
+	 return "Grade is too high.";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	 return "Grade is too low!";
+	 return "Grade is too low.";
 }
 void Bureaucrat::checkGrade(const Bureaucrat &b) const
 {
@@ -81,6 +81,7 @@ void Bureaucrat::signForm(AForm &f)
 {
 	try
 	{
+		f.beSigned(*this);
 		if (f.getIsSigned() == true)
 			std::cout << this->getName() << " signed " << f.getName() << std::endl;
 
@@ -89,6 +90,7 @@ void Bureaucrat::signForm(AForm &f)
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << this << " could not sign " << f << "because" << e.what() << std::endl;
+		std::cerr << this->getName() << " could not sign " << f.getName()
+			<< ", because: " << e.what() << std::endl;
 	}
 }
