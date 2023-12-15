@@ -3,7 +3,7 @@
 AForm::AForm() : _name(""), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
 {
 	checkGrade(*this);
-	// std::cout << "AForm (default) created!" << std::endl;
+	// std::cout << "AForm (default) created" << std::endl;
 }
 
 AForm::AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute) :_name(name),
@@ -15,12 +15,13 @@ AForm::AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExe
 AForm::AForm(const AForm &other) : _name(other._name), _isSigned(other._isSigned),
 	_gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
 {
+	// std::cout << "AForm (copy) created" << std::endl;
 	checkGrade(other);
 }
 
 AForm::~AForm()
 {
-	// std::cout << "AForm destructor called!" << std::endl;
+	// std::cout << "AForm destructed" << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &other)
@@ -44,7 +45,6 @@ void AForm::beSigned(Bureaucrat &b)
 		_isSigned = true;
 	else
 		throw AForm::GradeTooLowException();
-		// _isSigned = false;
 }
 
 void AForm::execute(Bureaucrat const &executor) const
