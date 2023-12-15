@@ -7,28 +7,29 @@
 int main()
 {
 	try {
-		Bureaucrat masa("Masa", 15);
-		std::cout << masa << std::endl;
-		ShrubberyCreationForm scf("home");
-		std::cout << scf << std::endl;
+		Intern i;
+		AForm form1 = i.makeForm("ShrubberyCreationForm", "home");
+		// Bureaucrat masa("Masa", 15);
+		// std::cout << masa << std::endl;
+		// std::cout << form1 << std::endl;
 
-		masa.signForm(scf);
-		scf.execute(masa);
+		// masa.signForm(form1);
+		// form1.execute(masa);
 
-		Bureaucrat tepa("Tepa", 60);
-		Bureaucrat menni("Menni", 80);
-		std::cout << tepa << std::endl;
-		PresidentialPardonForm ppf("Teemu");
-		std::cout << ppf << std::endl;
+		// Bureaucrat tepa("Tepa", 60);
+		// Bureaucrat menni("Menni", 80);
+		// std::cout << tepa << std::endl;
+		// PresidentialPardonForm ppf("Teemu");
+		// std::cout << ppf << std::endl;
 
-		tepa.signForm(ppf);
-		ppf.execute(menni);
+		// tepa.signForm(ppf);
+		// ppf.execute(menni);
 
-		RobotomyRequestForm rrf("Karen");
-		std::cout << rrf << std::endl;
+		// RobotomyRequestForm rrf("Karen");
+		// std::cout << rrf << std::endl;
 
-		menni.signForm(rrf);
-		rrf.execute(menni);
+		// menni.signForm(rrf);
+		// rrf.execute(menni);
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

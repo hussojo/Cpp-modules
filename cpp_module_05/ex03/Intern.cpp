@@ -1,4 +1,7 @@
 #include "Intern.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 Intern::Intern()
 {
@@ -15,23 +18,44 @@ Intern &Intern::operator=(const Intern &)
 	return *this;
 }
 
+AForm *Intern::makePresidentialForm(std::string target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
+AForm *Intern::makeRobotomyForm(std::string target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+AForm *Intern::makeShrubberyForm(std::string target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
 Intern::~Intern()
 {
 	// std::cout << "Intern destructed" << std::endl;
 }
 
+//ADD delete, for all pointers that are not returned and if none is returned delete all
 AForm &Intern::makeForm(std::string formName, std::string formTarget)
 {
-	// const int formCount = 3;
-	// std::string formArr[formCount] = {"PresidentialPardonForm",
-	// 	"RobotomyRequestForm", "ShrubberyCreationForm"};
-	// for (int i = 0; i < formCount; i++)
-	// {
-	// 	if (formName == formArr[i])
-	// 	{
-	// 		std::cout << "Intern creates " << formName << std::endl;
-	// 		return AForm *form(formName, formTarget);
-	// 	}
-	// }
+	const int formCount = 3;
+	std::string formArr[formCount] = {"PresidentialPardonForm",
+		"RobotomyRequestForm", "ShrubberyCreationForm"};
 
+	AForm *formptr[formCount] = {makePresidentialForm(formTarget),
+		makeRobotomyForm(formTarget), makeShrubberyForm(formTarget)};
+
+	for (int i = 0; i < formCount; i++)
+	{
+		std::cout << "array addresses: " << formptr[i] << std::endl;
+		if (formName == formArr[i])
+		{
+			std::cout << "Intern creates " << formName << "." << std::endl;
+			return *formptr[i];
+		}
+	}
+	throw std::invalid_argument("Form name invalid, intern is confused");
 }
