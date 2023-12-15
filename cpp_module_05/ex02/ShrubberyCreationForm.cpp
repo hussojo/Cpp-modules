@@ -43,13 +43,14 @@ void ShrubberyCreationForm::executeForm() const
 
 	for (int i = 0; i < 10 ; i++)
 	{
-		file << " Tree nro " << i + 1 << std::endl;
+		file << "         " << std::endl;
 		file << "    ^    " << std::endl;
 		file << "   ^^^   " << std::endl;
 		file << "  ^^^^^  " << std::endl;
 		file << " ^^^^^^^ " << std::endl;
 		file << "^^^^^^^^^" << std::endl;
 		file << "    |    " << std::endl;
+		file << "         " << std::endl;
 	}
 	file.close();
 }
