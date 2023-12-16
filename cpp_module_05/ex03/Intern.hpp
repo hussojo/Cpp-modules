@@ -7,13 +7,13 @@ class Intern {
 	public:
 		Intern();
 		~Intern();
+		Intern(const Intern &);
+		Intern &operator=(const Intern &);
 
 		AForm *makeForm(std::string formName, std::string formTarget);
 
 
 	private:
-		Intern(const Intern &);
-		Intern &operator=(const Intern &);
 		AForm *makePresidentialForm(std::string target);
 		AForm *makeRobotomyForm(std::string target);
 		AForm *makeShrubberyForm(std::string target);

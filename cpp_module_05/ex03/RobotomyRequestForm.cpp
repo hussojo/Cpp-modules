@@ -31,15 +31,23 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	// std::cout << "RobotomyRequestForm destructed" << std::endl;
 }
 
-void RobotomyRequestForm::executeForm() const
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	std::srand(std::time(0));
-	int random_variable = std::rand() % 100;
+	if (this->getIsSigned() == true)
+	{
+		if (executor.getGrade() <= this->getGradeToExecute())
+		{
+			std::srand(std::time(0));
+			int random_variable = std::rand() % 100;
 
-	std::cout << "*** drrrrrrrrrrrrilling noice ***" << std::endl;
-	if (random_variable < 50)
-		std::cout << _target << " has been robotomized successfully!" << std::endl;
+			std::cout << "*** drrrrrrrrrrrrilling noice ***" << std::endl;
+			if (random_variable < 50)
+				std::cout << _target << " has been robotomized successfully!" << std::endl;
+			else
+				std::cout << "Robotomy of " << _target << " failed! SOS" << std::endl;
+		}
+	}
 	else
-		std::cout << "Robotomy of " << _target << " failed! SOS" << std::endl;
+		throw GradeTooLowException();
 }
 

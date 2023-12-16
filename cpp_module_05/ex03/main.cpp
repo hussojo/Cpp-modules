@@ -6,31 +6,41 @@
 
 int main()
 {
-	try {
-		Intern i;
-		AForm* form1 = i.makeForm("ShrubberyCreationForm", "home");
+	try
+	{
+		Intern someRandomIntern;
+
+		AForm* ppf;
+		ppf = someRandomIntern.makeForm("PresidentialPardonForm", "Teemu");
+		std::cout << *ppf << std::endl;
+
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Karen");
+		std::cout << *rrf << std::endl;
+
+		AForm* scf;
+		scf = someRandomIntern.makeForm("ShrubberyCreationForm", "Park");
+		std::cout << *scf << std::endl;
+
 		Bureaucrat masa("Masa", 15);
 		std::cout << masa << std::endl;
-		std::cout << *form1 << std::endl;
-		delete form1;
+		Bureaucrat tepa("Tepa", 3);
+		std::cout << tepa << std::endl;
+		Bureaucrat menni("Menni", 8);
+		std::cout << menni << std::endl;
 
-		// masa.signForm(form1);
-		// form1.execute(masa);
+		masa.signForm(*scf);
+		masa.executeForm(*scf);
+		std::cout << "\n";
+		tepa.signForm(*ppf);
+		tepa.executeForm(*ppf);
+		std::cout << "\n";
+		menni.signForm(*rrf);
+		menni.executeForm(*rrf);
 
-		// Bureaucrat tepa("Tepa", 60);
-		// Bureaucrat menni("Menni", 80);
-		// std::cout << tepa << std::endl;
-		// PresidentialPardonForm ppf("Teemu");
-		// std::cout << ppf << std::endl;
-
-		// tepa.signForm(ppf);
-		// ppf.execute(menni);
-
-		// RobotomyRequestForm rrf("Karen");
-		// std::cout << rrf << std::endl;
-
-		// menni.signForm(rrf);
-		// rrf.execute(menni);
+		delete ppf;
+		delete rrf;
+		delete scf;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

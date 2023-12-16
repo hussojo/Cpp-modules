@@ -7,11 +7,11 @@ int main()
 {
 	try
 	{
-		Bureaucrat masa("Masa", 150);
+		Bureaucrat masa("Masa", 15);
 		std::cout << masa << std::endl;
-		Bureaucrat tepa("Tepa", 33);
+		Bureaucrat tepa("Tepa", 3);
 		std::cout << tepa << std::endl;
-		Bureaucrat menni("Menni", 80);
+		Bureaucrat menni("Menni", 8);
 		std::cout << menni << std::endl;
 
 

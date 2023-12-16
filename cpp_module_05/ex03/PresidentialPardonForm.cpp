@@ -31,7 +31,13 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	// std::cout << "PresidentialPardonForm destructed" << std::endl;
 }
 
-void PresidentialPardonForm::executeForm() const
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	std::cout << _target << " has been pardoned by Zaphod Beeblebrox. Hallelujah." << std::endl;
+	if (this->getIsSigned() == true)
+	{
+		if (executor.getGrade() <= this->getGradeToExecute())
+			std::cout << _target << " has been pardoned by Zaphod Beeblebrox. Hallelujah." << std::endl;
+	}
+	else
+		throw AForm::GradeTooLowException();
 }
