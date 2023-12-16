@@ -2,13 +2,13 @@
 
 Bureaucrat::Bureaucrat() : _name(""), _grade(0)
 {
-		// std::cout << "Bureaucrat (default) created!" << std::endl;
+		// std::cout << "Bureaucrat (default) created." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
 	checkGrade(*this);
-	// std::cout << "Created bureaucrat with name and grade" << std::endl;
+	// std::cout << "Created bureaucrat with name and grade." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other)
 
 Bureaucrat::~Bureaucrat()
 {
-	// std::cout << "Bureaucrat destructed!" << std::endl;
+	// std::cout << "Bureaucrat destructed." << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
@@ -81,6 +81,7 @@ void Bureaucrat::signForm(Form &f)
 {
 	try
 	{
+		f.beSigned(*this);
 		if (f.getIsSigned() == true)
 			std::cout << this->getName() << " signed " << f.getName() << std::endl;
 
@@ -89,6 +90,7 @@ void Bureaucrat::signForm(Form &f)
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << this << " could not sign " << f << "because" << e.what() << std::endl;
+		std::cerr << this->getName() << " could not sign " << f.getName()
+			<< ", because: " << e.what() << std::endl;
 	}
 }

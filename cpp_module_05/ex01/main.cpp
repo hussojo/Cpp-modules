@@ -9,9 +9,8 @@ int main()
 		Form form1("study aid", 35, 40);
 		std::cout << form1 << std::endl;
 
-		form1.beSigned(cat2);
-		std::cout << form1 << std::endl;
 		cat2.signForm(form1);
+		std::cout << form1 << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

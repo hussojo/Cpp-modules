@@ -3,7 +3,7 @@
 Form::Form() : _name(""), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
 {
 	checkGrade(*this);
-	// std::cout << "Form (default) created!" << std::endl;
+	// std::cout << "Form (default) created." << std::endl;
 }
 
 Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute) :_name(name),
@@ -20,7 +20,7 @@ Form::Form(const Form &other) : _name(other._name), _isSigned(other._isSigned),
 
 Form::~Form()
 {
-	// std::cout << "Form destructor called!" << std::endl;
+	// std::cout << "Form destructed." << std::endl;
 }
 
 Form &Form::operator=(const Form &other)
@@ -80,7 +80,7 @@ std::ostream &operator<<(std::ostream &os, const Form &f)
 {
 	os << "--form info--" <<
 	"\nName: " << f.getName() <<
-	"\nSigned: " << f.getIsSigned() <<
+	"\nSigned: " << std::boolalpha << f.getIsSigned() <<
 	"\nGrade to Sign: " << f.getGradeToSign() <<
 	"\nGrade to Execute: " << f.getGradeToExecute() << std::endl;
 

@@ -16,9 +16,7 @@ class Form {
 		~Form();
 
 		Form& operator=(const Form &other);
-
 		void checkGrade(const Form &f) const;
-
 		void beSigned(Bureaucrat &b);
 
 		class GradeTooHighException : public std::exception {
@@ -41,3 +39,4 @@ class Form {
 std::ostream &operator<<(std::ostream &os, const Form &f);
 
 #endif
+
