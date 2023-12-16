@@ -3,8 +3,6 @@
 
 #include "AForm.hpp"
 
-// class AForm;
-
 class PresidentialPardonForm : public AForm {
 	public:
 		PresidentialPardonForm();
@@ -13,7 +11,7 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 		virtual ~PresidentialPardonForm();
 
-		virtual void executeForm() const;
+		virtual void execute(Bureaucrat const &executor) const;
 
 	private:
 		std::string _target;

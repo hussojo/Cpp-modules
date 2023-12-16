@@ -5,29 +5,33 @@
 
 int main()
 {
-	try {
-		Bureaucrat masa("Masa", 15);
+	try
+	{
+		Bureaucrat masa("Masa", 150);
 		std::cout << masa << std::endl;
+		Bureaucrat tepa("Tepa", 33);
+		std::cout << tepa << std::endl;
+		Bureaucrat menni("Menni", 80);
+		std::cout << menni << std::endl;
+
+
 		ShrubberyCreationForm scf("home");
 		std::cout << scf << std::endl;
 
-		masa.signForm(scf);
-		scf.execute(masa);
-
-		Bureaucrat tepa("Tepa", 60);
-		Bureaucrat menni("Menni", 80);
-		std::cout << tepa << std::endl;
 		PresidentialPardonForm ppf("Teemu");
 		std::cout << ppf << std::endl;
-
-		tepa.signForm(ppf);
-		ppf.execute(menni);
 
 		RobotomyRequestForm rrf("Karen");
 		std::cout << rrf << std::endl;
 
+		masa.signForm(scf);
+		masa.executeForm(scf);
+		std::cout << "\n";
+		tepa.signForm(ppf);
+		tepa.executeForm(ppf);
+		std::cout << "\n";
 		menni.signForm(rrf);
-		rrf.execute(menni);
+		menni.executeForm(rrf);
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

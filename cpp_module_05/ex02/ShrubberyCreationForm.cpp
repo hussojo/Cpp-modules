@@ -1,4 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
@@ -31,26 +32,34 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	// std::cout << "ShrubberyCreationForm destructed" << std::endl;
 }
 
-void ShrubberyCreationForm::executeForm() const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	std::ofstream file(_target + "_shrubbery");
-
-	if (!file)
+	if (this->getIsSigned() == true)
 	{
-		std::cerr << "File could not be created" << std::endl;
-		return ;
-	}
+		if (executor.getGrade() <= this->getGradeToExecute())
+		{
+			std::ofstream file(_target + "_shrubbery");
 
-	for (int i = 0; i < 10 ; i++)
-	{
-		file << "         " << std::endl;
-		file << "    ^    " << std::endl;
-		file << "   ^^^   " << std::endl;
-		file << "  ^^^^^  " << std::endl;
-		file << " ^^^^^^^ " << std::endl;
-		file << "^^^^^^^^^" << std::endl;
-		file << "    |    " << std::endl;
-		file << "         " << std::endl;
+			if (!file)
+			{
+				std::cerr << "File could not be created" << std::endl;
+				return ;
+			}
+
+			for (int i = 0; i < 10 ; i++)
+			{
+				file << "         " << std::endl;
+				file << "    ^    " << std::endl;
+				file << "   ^^^   " << std::endl;
+				file << "  ^^^^^  " << std::endl;
+				file << " ^^^^^^^ " << std::endl;
+				file << "^^^^^^^^^" << std::endl;
+				file << "    |    " << std::endl;
+				file << "         " << std::endl;
+			}
+			file.close();
+		}
 	}
-	file.close();
+	else
+		throw GradeTooLowException();
 }
