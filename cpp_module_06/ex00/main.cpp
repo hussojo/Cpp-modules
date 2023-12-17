@@ -2,10 +2,19 @@
 
 int main(int ac, char *av[])
 {
-	if (ac == 2)
+	try
 	{
-		ScalarConverter::convert(av[1]);
+		if (ac != 2)
+			std::cout << "Wrong amount of arguments! use: ./convert <argument>" << std::endl;
+		else
+			ScalarConverter::convert(av[1]);
 	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+
 	return 0;
 }
 
