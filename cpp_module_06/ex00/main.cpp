@@ -5,7 +5,7 @@ int main(int ac, char *av[])
 	try
 	{
 		if (ac != 2)
-			std::cout << "Wrong amount of arguments! use: ./convert <argument>" << std::endl;
+			throw std::runtime_error("Wrong amount of arguments! use: ./convert <argument>");
 		else
 			ScalarConverter::convert(av[1]);
 	}
