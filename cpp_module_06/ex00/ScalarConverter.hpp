@@ -8,12 +8,16 @@
 
 class ScalarConverter {
 	public:
-		static void printConvertions();
 		static const std::string findInputType(const std::string &input);
 		static bool isInt(const std::string &input);
 		static void convertChar(const std::string &input);
 		static void convertInt(const std::string &input);
 		static void convert(const std::string &str);
+
+		static void printChar();
+		static void printInt();
+		static void printFloat();
+		static void printDouble();
 
 		// // getters
 		// int getI() const;
@@ -33,10 +37,10 @@ class ScalarConverter {
 		ScalarConverter &operator=(const ScalarConverter &other);
 		~ScalarConverter();
 
+		static char _char;
 		static int _int;
 		static float _float;
 		static double _double;
-		static char _char;
 		static std::string _type;
 
 } ;

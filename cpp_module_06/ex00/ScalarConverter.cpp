@@ -6,14 +6,6 @@ double ScalarConverter::_double;
 char ScalarConverter::_char;
 std::string ScalarConverter::_type;
 
-void ScalarConverter::printConvertions()
-{
-	std::cout << "char: " << _char << std::endl;
-	std::cout << "int: " << _int << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << _float << "f" << std::endl;
-	std::cout << "double: " << std::fixed << std::setprecision(1) << _double << std::endl;
-}
-
 const std::string ScalarConverter::findInputType(const std::string &input)
 {
 	if (input.length() == 0)
@@ -41,7 +33,6 @@ void ScalarConverter::convertChar(const std::string &input)
 	_int = static_cast<int>(_char);
 	_float = static_cast<float>(_char);
 	_double = static_cast<double>(_char);
-	printConvertions();
 }
 void ScalarConverter::convertInt(const std::string &input)
 {
@@ -51,7 +42,6 @@ void ScalarConverter::convertInt(const std::string &input)
 	_char = static_cast<char>(_int);
 	_float = static_cast<float>(_int);
 	_double = static_cast<double>(_int);
-	printConvertions();
 }
 void ScalarConverter::convert(const std::string &str)
 {
@@ -61,7 +51,35 @@ void ScalarConverter::convert(const std::string &str)
 		convertChar(str);
 	if (_type.compare("int") == 0)
 		convertInt(str);
+	printChar();
+	printInt();
+	printFloat();
+	printDouble();
+
 }
+void ScalarConverter::printChar()
+{
+	if (_char >= 32 && _char <= 126)
+		std::cout << "char: " << _char << std::endl;
+	else
+		std::cout << "char: Non displayable" << std::endl;
+}
+
+void ScalarConverter::printInt()
+{
+	std::cout << "int: " << _int << std::endl;
+}
+
+void ScalarConverter::printFloat()
+{
+	std::cout << "float: " << std::fixed << std::setprecision(1) << _float << "f" << std::endl;
+}
+
+void ScalarConverter::printDouble()
+{
+	std::cout << "double: " << std::fixed << std::setprecision(1) << _double << std::endl;
+}
+
 
 // GETTERS AND SETTERS
 
