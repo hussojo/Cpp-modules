@@ -1,7 +1,7 @@
 NAME := convert
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror
-SRC := main.cpp ScalarConverter.cpp
+SRC := main.cpp ScalarConverter.cpp printTypes.cpp findTypes.cpp convertTypes.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re
