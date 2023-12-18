@@ -8,14 +8,20 @@
 
 class ScalarConverter {
 	public:
+		// findTypes.cpp
 		static const std::string findInputType(const std::string &input);
 		static bool isInt(const std::string &input);
 		static bool isFloat(const std::string &input);
+		static bool isDouble(const std::string &input);
+
+		//convertTypes.cpp
 		static void convertChar(const std::string &input);
 		static void convertInt(const std::string &input);
 		static void convertFloat(const std::string &input);
+		static void convertDouble(const std::string &input);
 		static void convert(const std::string &str);
 
+		//printTypes.cpp
 		static void printChar();
 		static void printInt();
 		static void printFloat();
@@ -47,7 +53,7 @@ class ScalarConverter {
 
 		static bool impossibleI;
 		static bool impossibleF;
-
+		static bool impossibleD;
 } ;
 
 #endif

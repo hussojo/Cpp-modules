@@ -31,6 +31,17 @@ void ScalarConverter::convertFloat(const std::string &input)
 	_int = static_cast<int>(_float);
 	_double = static_cast<double>(_float);
 }
+void ScalarConverter::convertDouble(const std::string &input)
+{
+	std::cout << "DOUBLE came here with: " << input << std::endl;
+	std::stringstream ss(input);
+	ss >> _double;
+	if (ss.fail())
+		impossibleD = true;
+	_char = static_cast<char>(_double);
+	_int = static_cast<int>(_double);
+	_float = static_cast<float>(_double);
+}
 void ScalarConverter::convert(const std::string &str)
 {
 	ScalarConverter::_type = findInputType(str);
@@ -41,6 +52,8 @@ void ScalarConverter::convert(const std::string &str)
 		convertInt(str);
 	if (_type.compare("float") == 0)
 		convertFloat(str);
+	if (_type == "double")
+		convertDouble(str);
 	printChar();
 	printInt();
 	printFloat();

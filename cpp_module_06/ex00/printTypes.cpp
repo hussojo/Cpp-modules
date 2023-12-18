@@ -4,8 +4,8 @@ void ScalarConverter::printChar()
 {
 	if (_char >= 32 && _char <= 126)
 		std::cout << "char: " << _char << std::endl;
-	// else if (_type == "float")
-	// 	std::cout << "char: '*'" << _char << std::endl;
+	else if (_type == "float" || _type == "double")
+		std::cout << "char: '*'" << _char << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 }
@@ -28,5 +28,7 @@ void ScalarConverter::printFloat()
 
 void ScalarConverter::printDouble()
 {
+	if (impossibleD == true)
+		std::cout << "double: impossible" << std::endl;
 	std::cout << "double: " << std::fixed << std::setprecision(1) << _double << std::endl;
 }

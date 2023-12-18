@@ -7,6 +7,7 @@ char ScalarConverter::_char;
 std::string ScalarConverter::_type;
 bool ScalarConverter::impossibleI;
 bool ScalarConverter::impossibleF;
+bool ScalarConverter::impossibleD;
 
 ScalarConverter::ScalarConverter() {
 	_char = 0;
@@ -16,6 +17,7 @@ ScalarConverter::ScalarConverter() {
 	_type = "";
 	impossibleI = false;
 	impossibleF = false;
+	impossibleD = false;
 }
 
 // ScalarConverter::ScalarConverter(const ScalarConverter &other) {}
