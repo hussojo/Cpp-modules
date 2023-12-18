@@ -1,4 +1,4 @@
-NAME := convert
+NAME := serialize
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror
 SRC := main.cpp Serializer.cpp
