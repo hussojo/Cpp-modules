@@ -5,6 +5,8 @@ float ScalarConverter::_float;
 double ScalarConverter::_double;
 char ScalarConverter::_char;
 std::string ScalarConverter::_type;
+bool ScalarConverter::impossibleI;
+bool ScalarConverter::impossibleF;
 
 const std::string ScalarConverter::findInputType(const std::string &input)
 {
@@ -14,6 +16,8 @@ const std::string ScalarConverter::findInputType(const std::string &input)
 		return ("char");
 	else if (isInt(input) == true)
 		return ("int");
+	else if (isFloat(input) == true)
+		return ("float");
 	else
 		throw std::runtime_error("faulty input");
 }
@@ -22,6 +26,18 @@ bool ScalarConverter::isInt(const std::string &input)
 {
 	for (size_t i = 0; i < input.length(); i++)
 		if (input[i] < 48 || input[i] > 57)
+			return false;
+	return true;
+}
+
+bool ScalarConverter::isFloat(const std::string &input)
+{
+	size_t len = input.length();
+	std::cout << "len in isFloat: " << len << std::endl;
+	if (input[len - 1] != 'f' && input[len - 1] != 'F')
+		return false;
+	for (size_t i = 0; i < len - 1; i++)
+		if ((input[i] < 48 || input[i] > 57) && input[i] != 46)
 			return false;
 	return true;
 }
@@ -39,9 +55,22 @@ void ScalarConverter::convertInt(const std::string &input)
 	std::cout << "INT came here with: " << input << std::endl;
 	std::stringstream ss(input);
 	ss >> _int;
+	if (ss.fail())
+		impossibleI = true;
 	_char = static_cast<char>(_int);
 	_float = static_cast<float>(_int);
 	_double = static_cast<double>(_int);
+}
+void ScalarConverter::convertFloat(const std::string &input)
+{
+	std::cout << "FLOAT came here with: " << input << std::endl;
+	std::stringstream ss(input);
+	ss >> _float;
+	// if (ss.fail())
+	// 	impossibleF = true;
+	_char = static_cast<char>(_float);
+	_int = static_cast<int>(_float);
+	_double = static_cast<double>(_float);
 }
 void ScalarConverter::convert(const std::string &str)
 {
@@ -51,6 +80,8 @@ void ScalarConverter::convert(const std::string &str)
 		convertChar(str);
 	if (_type.compare("int") == 0)
 		convertInt(str);
+	if (_type.compare("float") == 0)
+		convertFloat(str);
 	printChar();
 	printInt();
 	printFloat();
@@ -61,17 +92,24 @@ void ScalarConverter::printChar()
 {
 	if (_char >= 32 && _char <= 126)
 		std::cout << "char: " << _char << std::endl;
+	if (_type == "float")
+		std::cout << "char: '*'" << _char << std::endl;
+
 	else
 		std::cout << "char: Non displayable" << std::endl;
 }
 
 void ScalarConverter::printInt()
 {
+	if (impossibleI == true)
+		std::cout << "int: impossible" << std::endl;
 	std::cout << "int: " << _int << std::endl;
 }
 
 void ScalarConverter::printFloat()
 {
+	if (impossibleF == true)
+		std::cout << "float: impossible" << std::endl;
 	std::cout << "float: " << std::fixed << std::setprecision(1) << _float << "f" << std::endl;
 }
 

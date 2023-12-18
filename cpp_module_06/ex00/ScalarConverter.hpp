@@ -10,8 +10,10 @@ class ScalarConverter {
 	public:
 		static const std::string findInputType(const std::string &input);
 		static bool isInt(const std::string &input);
+		static bool isFloat(const std::string &input);
 		static void convertChar(const std::string &input);
 		static void convertInt(const std::string &input);
+		static void convertFloat(const std::string &input);
 		static void convert(const std::string &str);
 
 		static void printChar();
@@ -42,6 +44,9 @@ class ScalarConverter {
 		static float _float;
 		static double _double;
 		static std::string _type;
+
+		static bool impossibleI;
+		static bool impossibleF;
 
 } ;
 
