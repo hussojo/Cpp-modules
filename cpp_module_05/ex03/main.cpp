@@ -21,6 +21,13 @@ int main()
 	ppf = someRandomIntern.makeForm("PresidentialPardonForm", "Teemu");
 	std::cout << *ppf << std::endl;
 
+	AForm* random;
+	random = someRandomIntern.makeForm("RANDOM", "not me");
+	if (random != nullptr)
+	std::cout << *random << std::endl;
+	else
+	std::cout << "Form creation failed." << std::endl;
+
 	try {
 		std::cout << "\n-------BUREAUCRAT 1--------" << std::endl;
 		Bureaucrat cat1("Dude", 80);
@@ -68,6 +75,8 @@ int main()
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
-
+	delete scf;
+	delete rrf;
+	delete ppf;
 	return 0;
 }
