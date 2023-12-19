@@ -37,7 +37,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	{
 		if (executor.getGrade() <= this->getGradeToExecute())
 		{
-			//std::srand(std::time(0));
+			std::srand(std::time(0));
 			int random_variable = std::rand() % 100;
 
 			std::cout << "*** drrrrrrrrrrrrilling noice ***" << std::endl;

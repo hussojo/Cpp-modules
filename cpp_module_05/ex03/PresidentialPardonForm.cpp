@@ -33,7 +33,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	if (this->getIsSigned() == true)
+	if (this->getIsSigned() == true && this->getIsDone() == false)
 	{
 		if (executor.getGrade() <= this->getGradeToExecute())
 			std::cout << _target << " has been pardoned by Zaphod Beeblebrox. Hallelujah." << std::endl;
