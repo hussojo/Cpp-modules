@@ -52,7 +52,7 @@ AForm *Intern::makeForm(std::string formName, std::string formTarget)
 	{
 		if (formName == formArr[i])
 		{
-			std::cout << "Intern creates " << formName << "." << std::endl;
+			std::cout << "Intern creates " << formName << std::endl;
 			for (int j = 0; j < formCount; j++)
 			{
 				if (j != i)
@@ -63,5 +63,8 @@ AForm *Intern::makeForm(std::string formName, std::string formTarget)
 	}
 	for (int j = 0; j < formCount; j++)
 			delete formptr[j];
-	throw std::invalid_argument("Form name invalid, intern is confused");
+
+	//throw std::invalid_argument("Form name invalid, intern is confused");
+	std::cout << "Form name invalid, intern is confused" << std::endl;
+	return NULL;
 }

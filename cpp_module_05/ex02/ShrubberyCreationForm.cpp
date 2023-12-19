@@ -38,7 +38,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	{
 		if (executor.getGrade() <= this->getGradeToExecute())
 		{
-			std::ofstream file(_target + "_shrubbery");
+			std::ofstream file(_target + "_shrubbery", std::ios::app);
 
 			if (!file)
 			{
@@ -46,7 +46,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 				return ;
 			}
 
-			for (int i = 0; i < 10 ; i++)
+			for (int i = 0; i < 2 ; i++)
 			{
 				file << "         " << std::endl;
 				file << "    ^    " << std::endl;

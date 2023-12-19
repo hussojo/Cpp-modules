@@ -17,6 +17,7 @@ $(OBJ): $(SRC)
 
 clean:
 	@rm -f $(OBJ)
+	@rm -f *_shrubbery
 
 fclean: clean
 	@rm -f $(NAME)

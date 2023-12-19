@@ -34,14 +34,18 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 
 void Bureaucrat::incrementGrade()
 {
-	this->_grade--;
-	checkGrade(*this);
+	if (this->_grade > 1)
+		this->_grade--;
+	else
+		std::cout << "Grade is already highest possible." << std::endl;
 }
 
 void Bureaucrat::decrementGrade()
 {
-	this->_grade++;
-	checkGrade(*this);
+	if (this->_grade < 150)
+		this->_grade++;
+	else
+		std::cout << "Grade is already lowest possible." << std::endl;
 }
 
 std::string Bureaucrat::getName() const
@@ -82,9 +86,8 @@ void Bureaucrat::signForm(AForm &f)
 	try
 	{
 		f.beSigned(*this);
-		if (f.getIsSigned() == true)
+		if (f.getIsSigned() == true && f.getIsDone() == false)
 			std::cout << this->getName() << " signed " << f.getName() << std::endl;
-
 		else
 			std::cout << f.getName() << " is already signed!" << std::endl;
 	}
@@ -100,8 +103,16 @@ void Bureaucrat::executeForm(AForm const &form)
 {
 	try
 	{
-		form.execute(*this);
-		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+		if (form.getIsSigned() == true && form.getIsDone() == false)
+		{
+			form.execute(*this);
+			std::cout << this->getName() << " executed " << form.getName() << std::endl;
+		}
+		else if (form.getIsSigned() == false)
+			std::cout << this->getName() << " could not execute " << form.getName()
+			<< ", because it's not signed." << std::endl;
+		else if (form.getIsSigned() == true && form.getIsDone() == true)
+			std::cout << form.getName() << " is already executed." << std::endl;
 	}
 	catch (std::exception & e)
 	{
