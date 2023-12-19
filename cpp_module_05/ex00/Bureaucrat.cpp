@@ -33,14 +33,18 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 
 void Bureaucrat::incrementGrade()
 {
-	this->_grade--;
-	checkGrade(*this);
+	if (this->_grade > 1)
+		this->_grade--;
+	else
+		std::cout << "Grade is already highest possible." << std::endl;
 }
 
 void Bureaucrat::decrementGrade()
 {
-	this->_grade++;
-	checkGrade(*this);
+	if (this->_grade < 150)
+		this->_grade++;
+	else
+		std::cout << "Grade is already lowest possible." << std::endl;
 }
 
 std::string Bureaucrat::getName() const
@@ -72,7 +76,7 @@ void Bureaucrat::checkGrade(const Bureaucrat &b) const
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 {
-	os << b.getName() << " bureaucrat grade " << b.getGrade() << "." << std::endl;
+	os << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << std::endl;
 	return os;
 }
 

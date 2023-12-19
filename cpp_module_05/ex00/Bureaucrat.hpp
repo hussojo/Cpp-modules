@@ -7,7 +7,6 @@
 
 class Bureaucrat {
 	public:
-		Bureaucrat();
 		Bureaucrat(const std::string name, unsigned int grade);
 		Bureaucrat(const Bureaucrat &other);
 		~Bureaucrat();
@@ -27,8 +26,9 @@ class Bureaucrat {
 		unsigned int getGrade() const;
 
 	private:
+		Bureaucrat();
 		const std::string _name;
-		unsigned int _grade;
+		int _grade;
 } ;
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
