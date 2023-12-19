@@ -8,7 +8,7 @@ Bureaucrat::Bureaucrat() : _name(""), _grade(0)
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
 	checkGrade(*this);
-	// std::cout << "Created bureaucrat with name and grade." << std::endl;
+	// std::cout << "Created bureaucrat with name and grade" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -19,14 +19,13 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other)
 
 Bureaucrat::~Bureaucrat()
 {
-	// std::cout << "Bureaucrat destructed." << std::endl;
+	// std::cout << "Bureaucrat destructed," << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
 	{
-		_name = other._name;
 		_grade = other._grade;
 	}
 	return *this;
@@ -34,14 +33,35 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 
 void Bureaucrat::incrementGrade()
 {
-	this->_grade--;
-	checkGrade(*this);
+	if (this->_grade > 1)
+		this->_grade--;
+	else
+		std::cout << "Grade is already highest possible." << std::endl;
 }
 
 void Bureaucrat::decrementGrade()
 {
-	this->_grade++;
-	checkGrade(*this);
+	if (this->_grade < 150)
+		this->_grade++;
+	else
+		std::cout << "Grade is already lowest possible." << std::endl;
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+	try
+	{
+		f.beSigned(*this);
+		if (f.getIsSigned() == true && f.getIsDone() == false)
+			std::cout << this->getName() << " signed " << f.getName() << std::endl;
+		else
+			std::cout << f.getName() << " is already signed!" << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << this->getName() << " could not sign " << f.getName()
+			<< ", because: " << e.what() << std::endl;
+	}
 }
 
 std::string Bureaucrat::getName() const
@@ -77,20 +97,3 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 	return os;
 }
 
-void Bureaucrat::signForm(Form &f)
-{
-	try
-	{
-		f.beSigned(*this);
-		if (f.getIsSigned() == true)
-			std::cout << this->getName() << " signed " << f.getName() << std::endl;
-
-		else
-			std::cout << f.getName() << " is already signed!" << std::endl;
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << this->getName() << " could not sign " << f.getName()
-			<< ", because: " << e.what() << std::endl;
-	}
-}

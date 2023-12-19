@@ -10,7 +10,6 @@ class Bureaucrat;
 
 class Form {
 	public:
-		Form();
 		Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute);
 		Form(const Form &other);
 		~Form();
@@ -28,12 +27,15 @@ class Form {
 		bool getIsSigned() const;
 		unsigned int getGradeToSign() const;
 		unsigned int getGradeToExecute() const;
+		bool getIsDone() const;
 
 	private:
+		Form();
 		const std::string _name;
 		bool _isSigned;
 		const unsigned int _gradeToSign;
 		const unsigned int _gradeToExecute;
+		bool _signDone;
 } ;
 
 std::ostream &operator<<(std::ostream &os, const Form &f);

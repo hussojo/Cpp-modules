@@ -32,9 +32,10 @@ class Bureaucrat {
 
 	private:
 		std::string _name;
-		unsigned int _grade;
+		int _grade;
 } ;
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
 
 #endif
+

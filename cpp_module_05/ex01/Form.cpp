@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : _name(""), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
+Form::Form() : _name(""), _isSigned(false), _gradeToSign(0), _gradeToExecute(0), _signDone(false)
 {
 	checkGrade(*this);
 	// std::cout << "Form (default) created." << std::endl;
@@ -10,10 +10,11 @@ Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecu
  _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
 	_isSigned = false;
+	_signDone = false;
 }
 
 Form::Form(const Form &other) : _name(other._name), _isSigned(other._isSigned),
-	_gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
+	_gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute), _signDone(other._signDone)
 {
 	checkGrade(other);
 }
@@ -26,7 +27,10 @@ Form::~Form()
 Form &Form::operator=(const Form &other)
 {
 	if (this != &other)
+	{
 		_isSigned = other._isSigned;
+		_signDone = other._signDone;
+	}
 	return *this;
 }
 
@@ -40,8 +44,10 @@ void Form::checkGrade(const Form &f) const
 
 void Form::beSigned(Bureaucrat &b)
 {
-	if (b.getGrade() <= this->getGradeToSign())
+	if (_isSigned == false && b.getGrade() <= this->getGradeToSign())
 		_isSigned = true;
+	else if (_isSigned == true)
+		_signDone = true;
 	else
 		throw Form::GradeTooLowException();
 }
@@ -64,6 +70,11 @@ unsigned int Form::getGradeToSign() const
 unsigned int Form::getGradeToExecute() const
 {
 	return _gradeToExecute;
+}
+
+bool Form::getIsDone() const
+{
+	return _signDone;
 }
 
 const char *Form::GradeTooHighException::what() const throw()
