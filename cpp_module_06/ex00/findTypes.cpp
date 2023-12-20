@@ -18,7 +18,10 @@ const std::string ScalarConverter::findInputType(const std::string &input)
 
 bool ScalarConverter::isInt(const std::string &input)
 {
-	for (size_t i = 0; i < input.length(); i++)
+	size_t i = 0;
+	if (input[i] == '+' || input [i] == '-')
+		i++;
+	for (; i < input.length(); i++)
 		if (input[i] < 48 || input[i] > 57)
 			return false;
 	return true;
@@ -26,23 +29,42 @@ bool ScalarConverter::isInt(const std::string &input)
 
 bool ScalarConverter::isFloat(const std::string &input)
 {
+	// add checkings for +inff, -inff and nan
 	size_t len = input.length();
-	std::cout << "len in isFloat: " << len << std::endl;
+	// std::cout << "len in isFloat: " << len << std::endl;
+	size_t i = 0;
+	if (input[i] == '+' || input [i] == '-')
+		i++;
 	if (input[len - 1] != 'f' && input[len - 1] != 'F')
 		return false;
-	for (size_t i = 0; i < len - 1; i++)
+	for (; i < len - 1; i++)
+	{
+		if (input[i] == 46)
+			_isDot += 1;
 		if ((input[i] < 48 || input[i] > 57) && input[i] != 46)
 			return false;
+	}
+	if (_isDot > 1)
+		return false;
 	return true;
 }
 
 bool ScalarConverter::isDouble(const std::string &input)
 {
+	// add checkings for +inf, -inf and nan
 	size_t len = input.length();
-	std::cout << "len in isDouble: " << len << std::endl;
-
-	for (size_t i = 0; i < len - 1; i++)
+	// std::cout << "len in isDouble: " << len << std::endl;
+	size_t i = 0;
+	if (input[i] == '+' || input [i] == '-')
+		i++;
+	for (; i < len; i++)
+	{
+		if (input[i] == 46)
+			_isDot += 1;
 		if ((input[i] < 48 || input[i] > 57) && input[i] != 46)
 			return false;
+	}
+	if (_isDot > 1)
+		return false;
 	return true;
 }

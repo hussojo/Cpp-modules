@@ -5,9 +5,10 @@ float ScalarConverter::_float;
 double ScalarConverter::_double;
 char ScalarConverter::_char;
 std::string ScalarConverter::_type;
-bool ScalarConverter::impossibleI;
-bool ScalarConverter::impossibleF;
-bool ScalarConverter::impossibleD;
+bool ScalarConverter::_impossibleI;
+bool ScalarConverter::_impossibleF;
+bool ScalarConverter::_impossibleD;
+int ScalarConverter::_isDot;
 
 ScalarConverter::ScalarConverter() {
 	_char = 0;
@@ -15,9 +16,10 @@ ScalarConverter::ScalarConverter() {
 	_float = 0.0f;
 	_double = 0.0;
 	_type = "";
-	impossibleI = false;
-	impossibleF = false;
-	impossibleD = false;
+	_impossibleI = false;
+	_impossibleF = false;
+	_impossibleD = false;
+	_isDot = 0;
 }
 
 // ScalarConverter::ScalarConverter(const ScalarConverter &other) {}

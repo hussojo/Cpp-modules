@@ -51,9 +51,10 @@ class ScalarConverter {
 		static double _double;
 		static std::string _type;
 
-		static bool impossibleI;
-		static bool impossibleF;
-		static bool impossibleD;
+		static bool _impossibleI;
+		static bool _impossibleF;
+		static bool _impossibleD;
+		static int _isDot;
 } ;
 
 #endif
