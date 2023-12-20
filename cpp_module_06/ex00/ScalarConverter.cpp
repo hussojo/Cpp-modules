@@ -5,6 +5,7 @@ float ScalarConverter::_float;
 double ScalarConverter::_double;
 char ScalarConverter::_char;
 std::string ScalarConverter::_type;
+bool ScalarConverter::_impossibleC;
 bool ScalarConverter::_impossibleI;
 bool ScalarConverter::_impossibleF;
 bool ScalarConverter::_impossibleD;
@@ -16,6 +17,7 @@ ScalarConverter::ScalarConverter() {
 	_float = 0.0f;
 	_double = 0.0;
 	_type = "";
+	_impossibleC = false;
 	_impossibleI = false;
 	_impossibleF = false;
 	_impossibleD = false;

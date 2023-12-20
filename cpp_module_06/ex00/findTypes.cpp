@@ -29,12 +29,14 @@ bool ScalarConverter::isInt(const std::string &input)
 
 bool ScalarConverter::isFloat(const std::string &input)
 {
-	// add checkings for +inff, -inff and nan
 	size_t len = input.length();
-	// std::cout << "len in isFloat: " << len << std::endl;
 	size_t i = 0;
 	if (input[i] == '+' || input [i] == '-')
+	{
+		if (input == "+inff")
+
 		i++;
+	}
 	if (input[len - 1] != 'f' && input[len - 1] != 'F')
 		return false;
 	for (; i < len - 1; i++)
@@ -51,9 +53,7 @@ bool ScalarConverter::isFloat(const std::string &input)
 
 bool ScalarConverter::isDouble(const std::string &input)
 {
-	// add checkings for +inf, -inf and nan
 	size_t len = input.length();
-	// std::cout << "len in isDouble: " << len << std::endl;
 	size_t i = 0;
 	if (input[i] == '+' || input [i] == '-')
 		i++;
@@ -67,4 +67,34 @@ bool ScalarConverter::isDouble(const std::string &input)
 	if (_isDot > 1)
 		return false;
 	return true;
+}
+
+bool ScalarConverter::isPseudo(const std::string &input)
+{
+	if (input == "-inf" || input == "-inff")
+	{
+		_impossibleC = true;
+		_impossibleI = true;
+		_float = -std::numeric_limits<float>::infinity();
+		std::cout << "converted float: "<< _float << std::endl;
+		_double = -std::numeric_limits<double>::infinity();
+		return true;
+	}
+	else if (input == "+inf" || input == "+inff")
+	{
+		_impossibleC = true;
+		_impossibleI = true;
+		_float = -std::numeric_limits<float>::infinity();
+		_double = -std::numeric_limits<double>::infinity();
+		return true;
+	}
+	else if (input == "nan" || input == "nanf")
+	{
+		_impossibleC = true;
+		_impossibleI = true;
+		_float = std::numeric_limits<float>::quiet_NaN();
+		_double = std::numeric_limits<double>::quiet_NaN();
+		return true;
+	}
+	return false;
 }

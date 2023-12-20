@@ -1,4 +1,5 @@
 #include "ScalarConverter.hpp"
+#include <limits>
 
 int main(int ac, char *av[])
 {
@@ -15,3 +16,9 @@ int main(int ac, char *av[])
 	}
 	return 0;
 }
+
+
+//  int main ()
+//  {
+// 	std::cout << number << std::endl;
+//  }

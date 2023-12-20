@@ -13,6 +13,7 @@ class ScalarConverter {
 		static bool isInt(const std::string &input);
 		static bool isFloat(const std::string &input);
 		static bool isDouble(const std::string &input);
+		static bool	isPseudo(const std::string &input);
 
 		//convertTypes.cpp
 		static void convertChar(const std::string &input);
@@ -51,6 +52,7 @@ class ScalarConverter {
 		static double _double;
 		static std::string _type;
 
+		static bool _impossibleC;
 		static bool _impossibleI;
 		static bool _impossibleF;
 		static bool _impossibleD;
