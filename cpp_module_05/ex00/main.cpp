@@ -15,6 +15,14 @@ int main()
 		std::cout << "\n-------BUREAUCRAT 2-------- " << std::endl;
 		Bureaucrat high("High priestess", 1);
 		std::cout << high << std::endl;
+		high.incrementGrade();
+		high.decrementGrade();
+		high.decrementGrade();
+		high.decrementGrade();
+		high.decrementGrade();
+		high.decrementGrade();
+		high.decrementGrade(); // -6
+		std::cout << high << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
@@ -23,6 +31,12 @@ int main()
 	try {
 		std::cout << "\n-------BUREAUCRAT 3-------- " << std::endl;
 		Bureaucrat low("Basic peasant", 150);
+		std::cout << low << std::endl;
+		low.decrementGrade();
+		low.incrementGrade();
+		low.incrementGrade();
+		low.incrementGrade();
+		low.incrementGrade(); // +4
 		std::cout << low << std::endl;
 	}
 	catch (const std::exception& e) {

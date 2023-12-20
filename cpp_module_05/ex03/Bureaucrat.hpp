@@ -10,7 +10,6 @@ class AForm;
 
 class Bureaucrat {
 	public:
-		Bureaucrat();
 		Bureaucrat(const std::string name, unsigned int grade);
 		Bureaucrat(const Bureaucrat &other);
 		~Bureaucrat();
@@ -32,6 +31,7 @@ class Bureaucrat {
 		unsigned int getGrade() const;
 
 	private:
+		Bureaucrat();
 		std::string _name;
 		unsigned int _grade;
 } ;

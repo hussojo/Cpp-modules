@@ -91,7 +91,7 @@ std::ostream &operator<<(std::ostream &os, const AForm &f)
 {
 	os << "--form info--" <<
 	"\nName: " << f.getName() <<
-	"\nSigned: " << f.getIsSigned() <<
+	"\nSigned: " << std::boolalpha << f.getIsSigned() <<
 	"\nGrade to Sign: " << f.getGradeToSign() <<
 	"\nGrade to Execute: " << f.getGradeToExecute() << std::endl;
 

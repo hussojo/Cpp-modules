@@ -9,6 +9,9 @@ int main()
 	ShrubberyCreationForm scf("home");
 	std::cout << scf << std::endl;
 
+	ShrubberyCreationForm scf2("home");
+	std::cout << scf << std::endl;
+
 	RobotomyRequestForm rrf("Karen");
 	std::cout << rrf << std::endl;
 
@@ -62,6 +65,20 @@ int main()
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
+
+	try {
+		std::cout << "\n-------BUREAUCRAT 4-------- " << std::endl;
+		Bureaucrat high("Basic peasant2", 140);
+		std::cout << high << std::endl;
+		high.signForm(scf2);
+		std::cout << "\n" ;
+		high.executeForm(scf2);
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+
 
 	return 0;
 }

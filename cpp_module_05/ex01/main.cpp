@@ -3,9 +3,9 @@
 int main()
 {
 
-	Form form1("study leave", 75, 80);
-	Form form2("neighbour execution", 2, 10);
-	Form form3("nonsense form", 150, 90);
+	Form form1("Study Leave", 75, 80);
+	Form form2("Neighbour Execution", 2, 10);
+	Form form3("Nonsense Form", 150, 90);
 
 	std::cout << form1 << std::endl;
 	std::cout << form2 << std::endl;
@@ -44,7 +44,9 @@ int main()
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
-
-
+	std::cout << "\n" ;
+	std::cout << form1 << std::endl;
+	std::cout << form2 << std::endl;
+	std::cout << form3 << std::endl;
 	return 0;
 }
