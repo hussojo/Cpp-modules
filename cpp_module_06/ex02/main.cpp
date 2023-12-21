@@ -17,7 +17,9 @@ Base* generate()
 
 void identify(Base *p)
 {
-	if (dynamic_cast<A*>(p))
+	if (p == NULL)
+		std::cerr << "Don't cast a NULL pointer, please!" << std::endl;
+	else if (dynamic_cast<A*>(p))
 		std::cout << "pointer: A" << std::endl;
 	else if (dynamic_cast<B*>(p))
 		std::cout << "pointer: B" << std::endl;

@@ -84,8 +84,8 @@ bool ScalarConverter::isPseudo(const std::string &input)
 	{
 		_impossibleC = true;
 		_impossibleI = true;
-		_float = -std::numeric_limits<float>::infinity();
-		_double = -std::numeric_limits<double>::infinity();
+		_float = std::numeric_limits<float>::infinity();
+		_double = std::numeric_limits<double>::infinity();
 		return true;
 	}
 	else if (input == "nan" || input == "nanf")
