@@ -1,7 +1,7 @@
 NAME := identify
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror
-SRC := main.cpp Serializer.cpp
+SRC := main.cpp Base.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re
