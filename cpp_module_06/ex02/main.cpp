@@ -17,34 +17,56 @@ Base* generate()
 
 void identify(Base *p)
 {
-	// std::cout << "pointer" << std::endl;
 	if (dynamic_cast<A*>(p))
-		std::cout << "A" << std::endl;
+		std::cout << "pointer: A" << std::endl;
 	else if (dynamic_cast<B*>(p))
-		std::cout << "B" << std::endl;
+		std::cout << "pointer: B" << std::endl;
 	else if (dynamic_cast<C*>(p))
-		std::cout << "C" << std::endl;
+		std::cout << "pointer: C" << std::endl;
 }
 
-void identify(Base &p)
+void identify( Base& p )
 {
-	// std::cout << "reference" << std::endl;
-	if (dynamic_cast<A*>(&p))
-		std::cout << "A" << std::endl;
-	else if (dynamic_cast<B*>(&p))
-		std::cout << "B" << std::endl;
-	else if (dynamic_cast<C*>(&p))
-		std::cout << "C" << std::endl;
+	Base temp;
+
+	try
+	{
+		temp = dynamic_cast<A&>(p);
+		std::cout << "reference: A" << std::endl;
+		return ;
+	}
+	catch (std::exception &e) {};
+	try
+	{
+		temp = dynamic_cast<B&>(p);
+		std::cout << "reference: B" << std::endl;
+		return ;
+	}
+	catch (std::exception &e) {};
+	try
+	{
+		temp = dynamic_cast<C&>(p);
+		std::cout << "reference: C" << std::endl;
+		return;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Reference type not known" << std::endl;
+	};
 }
 
 int main()
 {
+	std::srand(time(NULL));
+
 	Base *first = generate();
 	identify(first);
 	identify(*first);
+
 	Base *second = generate();
 	identify(second);
 	identify(*second);
+
 	Base *third = generate();
 	identify(third);
 	identify(*third);
