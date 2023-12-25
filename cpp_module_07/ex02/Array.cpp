@@ -3,7 +3,7 @@
 template <class T>
 inline Array<T>::Array() : _size(0), _array(NULL)
 {
-    //std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default constructor called" << std::endl;
 }
 
 /*
@@ -49,7 +49,7 @@ T &Array<T>::operator[](int index)
 template <class T>
 Array<T>::~Array()
 {
-    //std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 template <class T>

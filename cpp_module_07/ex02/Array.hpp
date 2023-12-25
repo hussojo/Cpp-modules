@@ -13,12 +13,11 @@ class Array {
         Array &operator=(const Array &other);
         T &operator[](int index);
         ~Array();
-
-        size_t size() const,
+        size_t size() const;
+        
     private:
         int _size;
         T *_array;
-
 } ;
 
 #endif
