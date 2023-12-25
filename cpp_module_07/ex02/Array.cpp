@@ -37,12 +37,24 @@ Array<T> &Array<T>::operator=(const Array<T> &other)
 }
 
 template <class T>
+T &Array<T>::operator[](int index)
+{
+    if (index >= 0 && index < _size)
+        return _array[index];
+    else
+        throw std::out_of_range("Index out of range");
+
+}
+
+template <class T>
 Array<T>::~Array()
 {
     //std::cout << "Destructor called" << std::endl;
 }
 
+template <class T>
+size_t Array<T>::size() const
+{
+    return size_t();
+}
 
-//     try {
-//      }
-//      throw std::out_of_range("Index out of range");
