@@ -1,7 +1,5 @@
 #include "Templates.hpp"
 
-/*
-
 int main( void ) {
 int a = 2;
 int b = 3;
@@ -18,28 +16,7 @@ std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 return 0;
 }
 
-*/
 /*
-a = 3, b = 2
-min(a, b) = 2
-max(a, b) = 3
-c = chaine2, d = chaine1
-min(c, d) = chaine1
-max(c, d) = chaine2
-*/
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 09:54:54 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/18 09:54:57 by corellan         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 int	main(void)
 {
 	int			a;
@@ -79,3 +56,4 @@ int	main(void)
 
 	return (0);
 }
+*/
