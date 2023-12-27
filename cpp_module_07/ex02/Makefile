@@ -1,7 +1,7 @@
 NAME := array
 CC := c++
 FLAGS := -std=c++98 -Wall -Wextra -Werror
-SRC := main.cpp Array.cpp
+SRC := main.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re

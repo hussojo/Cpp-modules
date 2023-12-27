@@ -4,8 +4,8 @@ int main( void )
 {
     try
     {
-        int * a = new int();
-        std::cout << *a << std::endl;
+        // unsigned int size = 5;
+        Array<int> array1;
     }
     catch(const std::exception& e)
     {
