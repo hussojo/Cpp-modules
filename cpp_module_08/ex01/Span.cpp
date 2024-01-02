@@ -19,6 +19,16 @@ void Span::addNumber(int i)
 	myVec.push_back(i);
 }
 
+/*
+void Span::addNumbers()
+{
+	if (myVec.size() >= _size)
+		throw std::runtime_error("Span is full!");
+	
+	myVec.push_back(i);
+}
+*/
+
 unsigned int Span::shortestSpan()
 {
 	if (myVec.size() < 2)
