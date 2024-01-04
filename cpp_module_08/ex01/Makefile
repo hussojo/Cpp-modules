@@ -1,7 +1,7 @@
 NAME := span
 CC := c++
-FLAGS := -std=c++98 -Wall -Wextra -Werror
-SRC := main.cpp
+FLAGS := -Wall -Wextra -Werror
+SRC := main.cpp Span.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re

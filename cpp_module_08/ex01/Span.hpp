@@ -2,11 +2,14 @@
 #define SPAN_HPP
 
 #include <vector>
+#include <list>
+#include <iterator>
 #include <string>
 #include <iostream>
 #include <exception>
 #include <algorithm>
 #include <climits>
+#include <ctime>
 
 class Span {
 	public:
@@ -16,15 +19,26 @@ class Span {
 		~Span();
 
 		void addNumber(int i);
-		void addNumbers(int i);
+		template <typename Iterator>
+		void addNumbers(Iterator begin, Iterator end)
+		{
+			while (begin != end)
+			{
+				addNumber(*begin);
+				++begin;
+			}
+		};
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
+
+		void printMyVec(void);
 
 	private:
 		Span();
 		unsigned int _size;
 		std::vector<int> myVec;
 } ;
+
 
 #endif
 

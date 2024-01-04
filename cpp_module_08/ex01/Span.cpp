@@ -19,16 +19,6 @@ void Span::addNumber(int i)
 	myVec.push_back(i);
 }
 
-/*
-void Span::addNumbers()
-{
-	if (myVec.size() >= _size)
-		throw std::runtime_error("Span is full!");
-	
-	myVec.push_back(i);
-}
-*/
-
 unsigned int Span::shortestSpan()
 {
 	if (myVec.size() < 2)
@@ -45,7 +35,14 @@ unsigned int Span::longestSpan()
 	if (myVec.size() < 2)
 		throw std::invalid_argument("Not enough elements in Span (one or less)");
 	std::sort(myVec.begin(), myVec.end());
-	return myVec.end() - myVec.begin();
+	return myVec[myVec.size() - 1] - myVec[0];
+}
+
+void Span::printMyVec(void)
+{
+	for (int num : myVec)
+		std::cout << num << std::endl;
+	std::cout << "----------------------------------" << std::endl;
 }
 
 Span::Span() : _size(0) {}
