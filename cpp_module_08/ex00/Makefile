@@ -1,6 +1,6 @@
 NAME := easyfind
 CC := c++
-FLAGS := -std=c++98 -Wall -Wextra -Werror
+FLAGS := -Wall -Wextra -Werror
 SRC := main.cpp
 OBJ := $(SRC:.cpp=.o)
 
