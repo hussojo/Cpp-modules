@@ -9,8 +9,8 @@ int main(void) {
 	try {
 		easyfind(vec, 42);
 		easyfind(vec, 172);
-		easyfind(vec, 2345);
-		easyfind(vec, -42);
+		// easyfind(vec, 2345);
+		// easyfind(vec, -42);
 	} catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
@@ -26,8 +26,8 @@ int main(void) {
 	try {
 		easyfind(deq, 42);
 		easyfind(deq, 172);
-		easyfind(deq, 2345);
-		easyfind(deq, -1);
+		// easyfind(deq, 2345);
+		// // easyfind(deq, -1);
 	} catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
@@ -43,8 +43,8 @@ int main(void) {
 	try {
 		easyfind(li, 42);
 		easyfind(li, 172);
-		easyfind(li, 2345);
-		easyfind(li, -1);
+		// easyfind(li, 2345);
+		// easyfind(li, -1);
 	} catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}

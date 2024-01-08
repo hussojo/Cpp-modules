@@ -1,6 +1,5 @@
 #include "Span.hpp"
 
-
 int main(void)
 {
 	std::cout << "----------------------------------" << std::endl;
@@ -8,7 +7,7 @@ int main(void)
 	{
 		std::cout << "Add single number at a time" << std::endl;
 		srand(time(NULL));
-		unsigned int spanSize = 5;
+		unsigned int spanSize = 6;
 		std::cout << "Span size: " << spanSize << std::endl;
 		Span span(spanSize);
 		span.addNumber(rand() % 100);
@@ -16,6 +15,7 @@ int main(void)
 		span.addNumber(rand() % 100);
 		span.addNumber(rand() % 100);
 		span.addNumber(rand() % 100);
+		span.addNumber(-5);
 		span.printMyVec();
 		std::cout << "shortest: " << span.shortestSpan() << std::endl;
 		std::cout << "longest: " << span.longestSpan() << std::endl;
@@ -32,7 +32,6 @@ int main(void)
 		unsigned int spanSize = 3;
 		std::cout << "Span size: " << spanSize << std::endl;
 		Span span(spanSize);
-		span.addNumber(rand() % 100);
 		span.addNumber(rand() % 100);
 		span.addNumber(rand() % 100);
 		span.addNumber(rand() % 100);
@@ -68,7 +67,7 @@ int main(void)
 	try
 	{
 		std::cout << "Add multiple numbers from deque" << std::endl;
-		unsigned int spanSize = 8;
+		unsigned int spanSize = 3;
 		std::cout << "Span size: " << spanSize << std::endl;
 		Span span(spanSize);
 		std::deque<int> deq;
@@ -87,11 +86,11 @@ int main(void)
 	try
 	{
 		std::cout << "Add multiple numbers from list" << std::endl;
-		unsigned int spanSize = 1;
+		unsigned int spanSize = 3;
 		std::cout << "Span size: " << spanSize << std::endl;
 		Span span(spanSize);
 		std::list<int> list;
-		for (unsigned int i = 0; i < spanSize; i++)
+		for (unsigned int i = 0; i < 5; i++)
 			list.push_back(rand() % 100);
 		span.addNumbers(list.begin(), list.end());
 		span.printMyVec();

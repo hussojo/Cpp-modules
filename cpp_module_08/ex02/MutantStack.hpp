@@ -24,10 +24,7 @@ class MutantStack : public std::stack < T, Container > {
 } ;
 
 template <typename T, typename Container>
-MutantStack<T, Container>::MutantStack()
-{
-	// std::cout << "Default constructor called" << std::endl;
-}
+MutantStack<T, Container>::MutantStack() {}
 
 template <typename T, typename Container>
 MutantStack<T, Container>::MutantStack(const MutantStack &other)
@@ -45,10 +42,7 @@ MutantStack<T, Container> & MutantStack<T, Container>::operator=(const MutantSta
 }
 
 template <typename T, typename Container>
-MutantStack<T, Container>::~MutantStack()
-{
-	// std::cout << "Default constructor called" << std::endl;
-}
+MutantStack<T, Container>::~MutantStack(){}
 
 template <typename T, typename Container>
 typename MutantStack<T, Container>::iterator MutantStack<T, Container>::begin()
