@@ -37,7 +37,7 @@ class Span {
 template <typename Iterator>
 void Span::addNumbers( Iterator begin, Iterator end)
 {
-	if ((std::distance(begin, end)) >= _size)
+	if ((std::distance(begin, end)) > _size)
 		throw std::runtime_error("Span is too small!");
 	this->myVec.insert(this->myVec.begin(), begin, end);
 }
