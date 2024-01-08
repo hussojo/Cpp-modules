@@ -42,7 +42,6 @@ void Span::printMyVec(void)
 {
 	for (int num : myVec)
 		std::cout << num << std::endl;
-	std::cout << "----------------------------------" << std::endl;
 }
 
 Span::Span() : _size(0) {}

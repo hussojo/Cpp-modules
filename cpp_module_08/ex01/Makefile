@@ -1,6 +1,6 @@
 NAME := span
 CC := c++
-FLAGS := -Wall -Wextra -Werror
+FLAGS := -std=c++11 -Wall -Wextra -Werror
 SRC := main.cpp Span.cpp
 OBJ := $(SRC:.cpp=.o)
 
