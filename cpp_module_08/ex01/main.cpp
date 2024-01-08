@@ -17,6 +17,8 @@ int main(void)
 		span.addNumber(rand() % 100);
 		span.addNumber(rand() % 100);
 		span.printMyVec();
+		std::cout << "shortest: " << span.shortestSpan() << std::endl;
+		std::cout << "longest: " << span.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -36,6 +38,8 @@ int main(void)
 		span.addNumber(rand() % 100);
 		span.addNumber(rand() % 100);
 		span.printMyVec();
+		std::cout << "shortest: " << span.shortestSpan() << std::endl;
+		std::cout << "longest: " << span.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -53,7 +57,8 @@ int main(void)
 			vec.push_back(rand() % 100);
 		span.addNumbers(vec.begin(), vec.end());
 		span.printMyVec();
-
+		std::cout << "shortest: " << span.shortestSpan() << std::endl;
+		std::cout << "longest: " << span.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -71,7 +76,8 @@ int main(void)
 			deq.push_back(rand() % 100);
 		span.addNumbers(deq.begin(), deq.end());
 		span.printMyVec();
-
+		std::cout << "shortest: " << span.shortestSpan() << std::endl;
+		std::cout << "longest: " << span.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -81,7 +87,7 @@ int main(void)
 	try
 	{
 		std::cout << "Add multiple numbers from list" << std::endl;
-		unsigned int spanSize = 14;
+		unsigned int spanSize = 1;
 		std::cout << "Span size: " << spanSize << std::endl;
 		Span span(spanSize);
 		std::list<int> list;
@@ -89,13 +95,15 @@ int main(void)
 			list.push_back(rand() % 100);
 		span.addNumbers(list.begin(), list.end());
 		span.printMyVec();
+		std::cout << "shortest: " << span.shortestSpan() << std::endl;
+		std::cout << "longest: " << span.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 }
-
+// SUBJECT MAIN
 // int main()
 // {
 // Span sp = Span(5);
