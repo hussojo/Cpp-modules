@@ -1,7 +1,8 @@
-NAME := bitcoinExchange
+NAME := btc
 CC := c++
-FLAGS := -Wall -Wextra -Werror
-SRC := main.cpp
+# FLAGS := -Wall -Wextra -Werror
+FLAGS := -g
+SRC := main.cpp BitcoinExchange.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re
