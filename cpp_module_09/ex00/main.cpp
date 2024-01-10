@@ -15,7 +15,7 @@ int main(int ac, char **av)
 		btc.printResult(input_file);
 	}
 	catch (std::exception &e) {
-		e.what();
+		std::cout << e.what() << std::endl;
 	}
 
 	return (0);

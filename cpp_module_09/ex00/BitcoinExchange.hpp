@@ -15,12 +15,13 @@ class BitcoinExchange {
 		BitcoinExchange &operator=(const BitcoinExchange &other);
 		~BitcoinExchange();
 
-		void printResult(const std::string &input);
+		void printResult(const std::string &inputFile);
 
 	private:
 		// BitcoinExchange();
 		std::map <std::string, double> exchangeRates;
-		void setExchangeRates(const std::string dataBase, std::map <std::string, double> &exchangeRates);
+		void setExchangeRates(const std::string &dataBase, std::map <std::string, double> &exchangeRates);
+		bool validateDate(const std::string &date);
 } ;
 
 #endif
