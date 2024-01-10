@@ -8,11 +8,15 @@ int main(int ac, char **av)
 		std::cout << "Usage: ./btc input_file" << std::endl;
 		return (1);
 	}
-
-	std::string db = "data.csv";
-	std::string input_file = av[1];
-	BitcoinExchange btc(db);
-	btc.printResult(input_file);
+	try {
+		std::string db = "data.csv";
+		std::string input_file = av[1];
+		BitcoinExchange btc(db);
+		btc.printResult(input_file);
+	}
+	catch (std::exception &e) {
+		e.what();
+	}
 
 	return (0);
 }
