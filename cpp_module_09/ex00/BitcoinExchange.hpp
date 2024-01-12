@@ -1,12 +1,13 @@
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
 
-#include <iostream> // tsekka naa
+#include <iostream>
 #include <string>
 #include <sstream>
 #include <fstream>
 #include <map>
 #include <exception>
+#include <iomanip>
 
 class BitcoinExchange {
 	public:
@@ -18,10 +19,11 @@ class BitcoinExchange {
 		void printResult(const std::string &inputFile);
 
 	private:
-		// BitcoinExchange();
+		BitcoinExchange();
 		std::map <std::string, double> exchangeRates;
 		void setExchangeRates(const std::string &dataBase, std::map <std::string, double> &exchangeRates);
-		bool validateDate(const std::string &date);
+		bool findClosestDate(std::string &date);
+
 } ;
 
 #endif
