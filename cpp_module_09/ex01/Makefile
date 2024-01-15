@@ -1,7 +1,7 @@
 NAME := RPN
 CC := c++
 FLAGS := -Wall -Wextra -Werror -g
-SRC := main.cpp
+SRC := main.cpp RPN.cpp
 OBJ := $(SRC:.cpp=.o)
 
 .PHONY: all clean fclean re
