@@ -1,6 +1,6 @@
 NAME := RPN
 CC := c++
-FLAGS := -Wall -Wextra -Werror -g
+FLAGS := -Wall -Wextra -Werror
 SRC := main.cpp RPN.cpp
 OBJ := $(SRC:.cpp=.o)
 
