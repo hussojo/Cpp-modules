@@ -1,6 +1,7 @@
 NAME := PmergeMe
 CC := c++
-FLAGS := -Wall -Wextra -Werror -g
+# FLAGS := -Wall -Wextra -Werror -g
+FLAGS := -g
 SRC := main.cpp PmergeMe.cpp
 OBJ := $(SRC:.cpp=.o)
 
