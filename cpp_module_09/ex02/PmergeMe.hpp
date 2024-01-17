@@ -8,6 +8,8 @@
 #include <algorithm>
 #include <utility>
 
+void mergeSort(std::vector <unsigned int> &large, unsigned int start, unsigned int mid, unsigned int end);
+void mergeSplit(std::vector<unsigned int> &large, unsigned int start, unsigned int end);
 void mergeInsertion(std::vector<unsigned int> &vector, unsigned int start, unsigned int end);
 void sortAndPrint(char ** input);
 
