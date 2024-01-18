@@ -1,20 +1,49 @@
 #include "PmergeMe.hpp"
 
-void mergeSort(std::vector <unsigned int> &large, unsigned int start, unsigned int mid, unsigned int end)
+void mergeSort(std::vector <unsigned int> &vector, unsigned int start, unsigned int mid, unsigned int end, std::vector<unsigned int> temp) // vector = A, B = temp
 {
-	std::cout << "mergeSort" << std::endl;
+	unsigned int i = start;
+	unsigned int j = mid + 1;
+
+	while (i <= mid && j <= end)
+	{
+		if (vector[i] < vector[j])
+		{
+			temp.push_back(vector[i]);
+			i++;
+		}
+		else
+		{
+			temp.push_back(vector[j]);
+			j++;
+		}
+	}
+	while (i <= mid)
+	{
+		temp.push_back(vector[i]);
+		i++;
+	}
+	while (j <= end)
+	{
+		temp.push_back(vector[j]);
+		j++;
+	}
+	for (unsigned int i = start; i <= end; i++)
+		vector[i] = temp[i - start];
+	for (unsigned int k = 0; k < temp.size(); k++)
+		std::cout << "temp: " << temp[k] << std::endl;
 }
 
-void mergeSplit(std::vector<unsigned int> &large, unsigned int start, unsigned int end) // large = A, B = temp
+void mergeSplit(std::vector<unsigned int> &vector, unsigned int start, unsigned int end)
 {
 	std::vector<unsigned int> temp;
 
 	if (start >= end)
 		return ;
 	unsigned int mid = (start + end) / 2;
-	mergeSplit(large, start, mid);
-	mergeSplit(large, mid, end);
-	mergeSort(large, start, mid, end);
+	mergeSplit(vector, start, mid);
+	mergeSplit(vector, mid + 1, end);
+	mergeSort(vector, start, mid, end, temp);
 }
 
 void mergeInsertion(std::vector<unsigned int> &vector, unsigned int start, unsigned int end) // need start and end?
@@ -37,6 +66,7 @@ void mergeInsertion(std::vector<unsigned int> &vector, unsigned int start, unsig
 		if (pairs[i].first > pairs[i].second)
 			std::swap(pairs[i].first, pairs[i].second);
 		// std::cout << "sorted: " << pairs[i].first << ", " << pairs[i].second << std::endl;
+		small.push_back(pairs[i].first);
 		large.push_back(pairs[i].second);
 		// std::cout << "lerge vector: " << large.back() << std::endl;
 	}
