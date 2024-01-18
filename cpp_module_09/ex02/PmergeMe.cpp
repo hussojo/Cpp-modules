@@ -116,22 +116,27 @@ Container<unsigned int> parseInput(char **input)
 	return container;
 }
 
+template <template <typename...> class Container>
+void print(Container<unsigned int> container)
+{
+	for (typename Container<unsigned int>::iterator it = container.begin(); it != container.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+}
+
 void sortAndPrint(char **input)
 {
-	std::cout << "Before: " ;
-	for (int i = 0; input[i]; i++)
-		std::cout << input[i] << " ";
-	std::cout << std::endl;
 	{ //vector
 		std::vector <unsigned int> vector = parseInput<std::vector>(input);
+		std::cout << "Before: " << std::flush;
+		print(vector);
 		std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
 		std::vector<unsigned int>::iterator it;
 		mergeInsertion(vector);
 		std::chrono::high_resolution_clock::time_point stop = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double> >(stop - start);
-		std::cout << "After: \t" ;
-		for (it = vector.begin(); it != vector.end(); it++)
-			std::cout << *it << " ";
+		std::cout << "After: \t" << std::flush;
+		print(vector);
 		std::cout << std::endl;
 		std::cout << "Time to process a range of " << vector.size() << " elements with std::deque : "
 			<< std::fixed << std::setprecision(6) << time_span.count() << " seconds" << std::endl;
@@ -140,19 +145,11 @@ void sortAndPrint(char **input)
 		std::deque <unsigned int> deque = parseInput<std::deque>(input);
 		std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
 		std::deque<unsigned int>::iterator it;
-		// std::cout << "Deque Before: " ;
-		// for (it = deque.begin(); it != deque.end(); it++)
-		// 	std::cout << *it << " ";
-		// std::cout << std::endl;
 		mergeInsertion(deque);
 		std::chrono::high_resolution_clock::time_point stop = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double> >(stop - start);
 		std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : "
 			<< std::fixed << std::setprecision(6) << time_span.count() << " seconds" << std::endl;
-		// std::cout << "Deque After: \t" ;
-		// for (it = deque.begin(); it != deque.end(); it++)
-		// 	std::cout << *it << " ";
-		// std::cout << std::endl;
 	}
 }
 
