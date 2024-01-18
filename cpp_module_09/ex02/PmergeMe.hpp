@@ -8,15 +8,16 @@
 #include <algorithm>
 #include <utility>
 
-void mergeSort(std::vector <unsigned int> &vector, unsigned int start, unsigned int mid, unsigned int end, std::vector<unsigned int> temp);
-void mergeSplit(std::vector<unsigned int> &large, unsigned int start, unsigned int end);
-void binarySearchInsertion(std::vector<unsigned int> &large, unsigned int size, std::vector<unsigned int> small);
-void mergeInsertion(std::vector<unsigned int> &vector, unsigned int start, unsigned int end);
-void sortAndPrint(char ** input);
-
-/*
-- two containers, deque and vector
-- templated sorting algorithm
-*/
+template <template <typename...> class Container>
+void mergeSort(Container <unsigned int> &container, unsigned int start, unsigned int mid,
+	unsigned int end, Container<unsigned int> temp);
+template <template <typename...> class Container>
+void mergeSplit(Container<unsigned int> &container, unsigned int start, unsigned int end);
+template <template <typename...> class Container>
+void	binarySearchInsertion(Container<unsigned int> &large,	Container<unsigned int> small, unsigned int stray);
+template <template <typename...> class Container>
+void mergeInsertion(Container<unsigned int> &container);
+template <template <typename...> class Container> Container<unsigned int> parseInput(char **input);
+void sortAndPrint(char **input);
 
 #endif

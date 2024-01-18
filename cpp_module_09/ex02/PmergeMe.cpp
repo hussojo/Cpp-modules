@@ -1,109 +1,99 @@
 #include "PmergeMe.hpp"
 
-void mergeSort(std::vector <unsigned int> &vector, unsigned int start, unsigned int mid,
-	unsigned int end, std::vector<unsigned int> temp)
+template <template <typename...> class Container>
+void mergeSort(Container <unsigned int> &container, unsigned int start, unsigned int mid,
+	unsigned int end, Container<unsigned int> temp)
 {
 	unsigned int i = start;
 	unsigned int j = mid + 1;
 
 	while (i <= mid && j <= end)
 	{
-		if (vector[i] < vector[j])
+		if (container[i] < container[j])
 		{
-			temp.push_back(vector[i]);
+			temp.push_back(container[i]);
 			i++;
 		}
 		else
 		{
-			temp.push_back(vector[j]);
+			temp.push_back(container[j]);
 			j++;
 		}
 	}
 	while (i <= mid)
 	{
-		temp.push_back(vector[i]);
+		temp.push_back(container[i]);
 		i++;
 	}
 	while (j <= end)
 	{
-		temp.push_back(vector[j]);
+		temp.push_back(container[j]);
 		j++;
 	}
 	for (unsigned int i = start; i <= end; i++)
-		vector[i] = temp[i - start];
+		container[i] = temp[i - start];
 }
 
-void mergeSplit(std::vector<unsigned int> &vector, unsigned int start, unsigned int end)
+template <template <typename...> class Container>
+void mergeSplit(Container<unsigned int> &container, unsigned int start, unsigned int end)
 {
-	std::vector<unsigned int> temp;
+	Container<unsigned int> temp;
 
 	if (start >= end)
 		return ;
 	unsigned int mid = (start + end) / 2;
-	mergeSplit(vector, start, mid);
-	mergeSplit(vector, mid + 1, end);
-	mergeSort(vector, start, mid, end, temp);
+	mergeSplit(container, start, mid);
+	mergeSplit(container, mid + 1, end);
+	mergeSort(container, start, mid, end, temp);
 }
 
-void	binarySearchInsertion(std::vector<unsigned int> &large, unsigned int size,
-	std::vector<unsigned int> small, unsigned int stray)
+template <template <typename...> class Container>
+void	binarySearchInsertion(Container<unsigned int> &large,	Container<unsigned int> small, unsigned int stray)
 {
-	for (std::vector<unsigned int>::iterator small_it = small.begin(); small_it != small.end(); ++small_it)
+	for (typename Container<unsigned int>::iterator small_it = small.begin(); small_it != small.end(); ++small_it)
 	{
-		std::vector<unsigned int>::iterator insert_pos = std::lower_bound(large.begin(), large.end(), *small_it);
+		typename Container<unsigned int>::iterator insert_pos = std::lower_bound(large.begin(), large.end(), *small_it);
 		large.insert(insert_pos, *small_it);
 	}
-	std::vector<unsigned int>::iterator insert_pos = std::lower_bound(large.begin(), large.end(), stray);
+	typename Container<unsigned int>::iterator insert_pos = std::lower_bound(large.begin(), large.end(), stray);
 	large.insert(insert_pos, stray);
 }
 
-void mergeInsertion(std::vector<unsigned int> &vector, unsigned int start, unsigned int end) // need start and end?
+template <template <typename...> class Container>
+void mergeInsertion(Container<unsigned int> &container)
 {
-	std::vector <std::pair <unsigned int, unsigned int> > pairs;
-	std::vector <unsigned int> small;
-	std::vector <unsigned int> large;
+	Container <std::pair <unsigned int, unsigned int> > pairs;
+	Container <unsigned int> small;
+	Container <unsigned int> large;
 	unsigned int stray;
 
-	if (vector.size() % 2) // check for uneven amount of elements
+	if (container.size() % 2) // check for uneven amount of elements
 	{
-		stray = vector.back();
-		vector.pop_back();
+		stray = container.back();
+		container.pop_back();
 	}
-	for (unsigned int i = 0; i < vector.size(); i += 2) // create pairs
+	for (unsigned int i = 0; i < container.size(); i += 2) // create pairs
 	{
-		pairs.push_back(std::make_pair(vector[i], vector[i + 1]));
-		std::cout << "pair: " << pairs[i / 2].first << ", " << pairs[i / 2].second << std::endl;
+		pairs.push_back(std::make_pair(container[i], container[i + 1]));
 	}
 	for (unsigned int i = 0; i < pairs.size(); i++) // sort pairs -> first < second
 	{
 		if (pairs[i].first > pairs[i].second)
 			std::swap(pairs[i].first, pairs[i].second);
-		// std::cout << "sorted: " << pairs[i].first << ", " << pairs[i].second << std::endl;
 		small.push_back(pairs[i].first);
 		large.push_back(pairs[i].second);
-		// std::cout << "large vector: " << large.back() << std::endl;
 	}
-	// std::cout << "stray: " << stray << std::endl;
 	mergeSplit(large, 0, large.size() - 1); // sort large
-	std::cout << "large vector: ";
-	for (unsigned int i = 0; i < large.size(); i++)
-		std::cout << large[i] << " ";
-	std::cout << std::endl;
-	std::cout << "small vector: ";
-	for (unsigned int i = 0; i < small.size(); i++)
-		std::cout << small[i] << " ";
 	std::cout << std::endl;
 	// BINARY INSERTION
-	binarySearchInsertion(large, large.size(), small, stray);
-	// copy large to vector
-	vector = large;
-	// for (std::vector<unsigned int>::iterator it = large.begin(); it != large.end(); it++;)
-	// 	vector[i] = large[it];
+	binarySearchInsertion(large, small, stray);
+	container = large;
 }
 
-std::vector <unsigned int> parseInput(char **input)
+template <template <typename...> class Container>
+Container<unsigned int> parseInput(char **input)
 {
-	std::vector <unsigned int> vector;
+	Container<unsigned int> container;
 	try
 	{
 		for (int i = 0; input[i]; i++)
@@ -113,7 +103,7 @@ std::vector <unsigned int> parseInput(char **input)
 				throw std::invalid_argument("Invalid argument");
 				exit(1);
 			}
-			vector.push_back(std::stoi(input[i]));
+			container.push_back(std::stoi(input[i]));
 		}
 	}
 	catch(const std::exception& e)
@@ -121,29 +111,43 @@ std::vector <unsigned int> parseInput(char **input)
 		std::cerr << e.what() << '\n';
 		exit(1);
 	}
-	return vector;
+	if (container.size() <= 1)
+		throw std::runtime_error("Not enough arguments");
+	return container;
 }
 
 void sortAndPrint(char **input)
 {
-	std::cout << "input: " ;
-	for (int i = 0; input[i]; i++)
-		std::cout << input[i] << " ";
-	std::cout << std::endl;
-	{ //deque
-		// std::deque <unsigned int> deque;
-		// deque.sort();
-		// deque.print();
-	}
+	// std::cout << "input: " ;
+	// for (int i = 0; input[i]; i++)
+	// 	std::cout << input[i] << " ";
+	// std::cout << std::endl;
 	{ //vector
-		std::vector <unsigned int> vector = parseInput(input);
-		// SORTING ALGORITHM!!!!
-		mergeInsertion(vector, 0, vector.size() - 1);
+		std::vector <unsigned int> vector = parseInput<std::vector>(input);
 		std::vector<unsigned int>::iterator it;
-		std::cout << "vector: " ;
+		std::cout << "Vector Before: " ;
+		for (it = vector.begin(); it != vector.end(); it++)
+			std::cout << *it << " ";
+		std::cout << std::endl;
+		mergeInsertion(vector);
+		std::cout << "Vector After: \t" ;
 		for (it = vector.begin(); it != vector.end(); it++)
 			std::cout << *it << " ";
 		std::cout << std::endl;
 
 	}
+	{ //deque
+		std::deque <unsigned int> deque = parseInput<std::deque>(input);
+		std::deque<unsigned int>::iterator it;
+		std::cout << "Deque Before: " ;
+		for (it = deque.begin(); it != deque.end(); it++)
+			std::cout << *it << " ";
+		std::cout << std::endl;
+		mergeInsertion(deque);
+		std::cout << "Deque After: \t" ;
+		for (it = deque.begin(); it != deque.end(); it++)
+			std::cout << *it << " ";
+		std::cout << std::endl;
+	}
 }
+
