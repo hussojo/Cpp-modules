@@ -48,15 +48,18 @@ void mergeSplit(Container<unsigned int> &container, unsigned int start, unsigned
 }
 
 template <template <typename...> class Container>
-void	binarySearchInsertion(Container<unsigned int> &large,	Container<unsigned int> small, unsigned int stray)
+void	binarySearchInsertion(Container<unsigned int> &large, Container<unsigned int> small, int stray)
 {
 	for (typename Container<unsigned int>::iterator small_it = small.begin(); small_it != small.end(); ++small_it)
 	{
 		typename Container<unsigned int>::iterator insert_pos = std::lower_bound(large.begin(), large.end(), *small_it);
 		large.insert(insert_pos, *small_it);
 	}
-	typename Container<unsigned int>::iterator insert_pos = std::lower_bound(large.begin(), large.end(), stray);
-	large.insert(insert_pos, stray);
+	if (stray != -1)
+	{
+		typename Container<unsigned int>::iterator insert_pos = std::lower_bound(large.begin(), large.end(), stray);
+		large.insert(insert_pos, stray);
+	}
 }
 
 template <template <typename...> class Container>
@@ -65,7 +68,7 @@ void mergeInsertion(Container<unsigned int> &container)
 	Container <std::pair <unsigned int, unsigned int> > pairs;
 	Container <unsigned int> small;
 	Container <unsigned int> large;
-	unsigned int stray;
+	int stray = -1;
 
 	if (container.size() % 2) // check for uneven amount of elements
 	{
@@ -84,8 +87,6 @@ void mergeInsertion(Container<unsigned int> &container)
 		large.push_back(pairs[i].second);
 	}
 	mergeSplit(large, 0, large.size() - 1); // sort large
-	std::cout << std::endl;
-	// BINARY INSERTION
 	binarySearchInsertion(large, small, stray);
 	container = large;
 }
@@ -108,7 +109,7 @@ Container<unsigned int> parseInput(char **input)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 		exit(1);
 	}
 	if (container.size() <= 1)
@@ -137,7 +138,6 @@ void sortAndPrint(char **input)
 		std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double> >(stop - start);
 		std::cout << "After: \t" << std::flush;
 		print(vector);
-		std::cout << std::endl;
 		std::cout << "Time to process a range of " << vector.size() << " elements with std::deque : "
 			<< std::fixed << std::setprecision(6) << time_span.count() << " seconds" << std::endl;
 	}
