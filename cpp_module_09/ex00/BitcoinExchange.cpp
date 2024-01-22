@@ -1,6 +1,6 @@
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange(const std::string &dataBase) // "data.csv"
+BitcoinExchange::BitcoinExchange(const std::string &dataBase)
 {
 	setExchangeRates(dataBase, exchangeRates);
 }
@@ -80,7 +80,7 @@ void BitcoinExchange::setExchangeRates(const std::string &dataBase, std::map<std
 	{
 		delimeter = line.find(',');
 		std::string date = line.substr(0, delimeter);
-		double rate = std::stod(line.substr(delimeter + 1)); // This we can trust!!!!!
+		double rate = std::stod(line.substr(delimeter + 1));
 		exchangeRates[date] = rate;
 	}
 }
