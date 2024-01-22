@@ -49,12 +49,12 @@ void BitcoinExchange::printResult(const std::string &inputFile)
 		}
 		catch (const std::invalid_argument& e)
 		{
-			std::cerr << "Invalid argument: " << e.what() << '\n';
+			std::cerr << "Invalid argument: " << e.what() << std::endl;
 			continue;
 		}
 		catch (const std::out_of_range& e)
 		{
-			std::cerr << "Out of Range error: " << e.what() << '\n';
+			std::cerr << "Out of Range error: " << e.what() << std::endl;
 			continue;
 		}
 		if (value < 0)
