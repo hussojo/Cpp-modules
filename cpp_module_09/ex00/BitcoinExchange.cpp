@@ -102,6 +102,17 @@ bool BitcoinExchange::findClosestDate(std::string &date)
 	month = tm.tm_mon + 1; // Note: tm_mon is zero-based
 	day = tm.tm_mday;
 
+	std::ostringstream validDateTest;
+	validDateTest << year << '-'
+			<< std::setw(2) << std::setfill('0') << month << '-'
+			<< std::setw(2) << std::setfill('0') << day;
+
+	if (validDateTest.str().compare(date))
+	{
+		std::cerr << "Error: bad input => " << date << std::endl;
+		return false;
+	}
+
 	while (year > 2008)
 	{
 		while (month > 0)
@@ -112,11 +123,11 @@ bool BitcoinExchange::findClosestDate(std::string &date)
 				convert << year << '-'
 						<< std::setw(2) << std::setfill('0') << month << '-'
 						<< std::setw(2) << std::setfill('0') << day;
-				std::string nearest_date(convert.str());
+				std::string nearestDate(convert.str());
 
-				if (exchangeRates.count(nearest_date))
+				if (exchangeRates.count(nearestDate))
 				{
-					date = nearest_date;
+					date = nearestDate;
 					return true;
 				}
 				day--;
