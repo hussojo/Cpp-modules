@@ -59,6 +59,16 @@ void printRpn(std::string input)
 			throw std::runtime_error("Error");
 	}
 	res = operands.top();
-	std::cout << res << std::endl;
+
+	std::stack<int> temp;
+	while(!operands.empty()) {
+		temp.push(operands.top());
+		operands.pop();
+	}
+	while(!temp.empty())
+	{
+		std::cout << temp.top() << " ";
+		temp.pop();
+	}
+	std::cout << std::endl;
 }
- // The person being evaluated must explain why they chose to use this container and not another?

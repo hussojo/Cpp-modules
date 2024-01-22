@@ -138,7 +138,7 @@ void sortAndPrint(char **input)
 		std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double> >(stop - start);
 		std::cout << "After: \t" << std::flush;
 		print(vector);
-		std::cout << "Time to process a range of " << vector.size() << " elements with std::deque : "
+		std::cout << "Time to process a range of " << vector.size() << " elements with std::vector: "
 			<< std::fixed << std::setprecision(6) << time_span.count() << " seconds" << std::endl;
 	}
 	{ //deque
@@ -148,7 +148,7 @@ void sortAndPrint(char **input)
 		mergeInsertion(deque);
 		std::chrono::high_resolution_clock::time_point stop = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double> >(stop - start);
-		std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : "
+		std::cout << "Time to process a range of " << deque.size() << " elements with std::deque: "
 			<< std::fixed << std::setprecision(6) << time_span.count() << " seconds" << std::endl;
 	}
 }
